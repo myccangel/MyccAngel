@@ -1,0 +1,46 @@
+ion-button[color="dark"]{
+  text-transform: initial;
+}
+
+/* Estilos para o título do cartão */
+ion-card-title {
+  color: #B95CF4; /* Roxo */
+}
+
+/* Estilos para os textos dos itens de entrada */
+ion-label {
+  color: #B95CF4; /* Roxo */
+}
+
+/* Estilos para os botões */
+ion-button[size="full"] {
+  --background: #B95CF4; /* Cor de preenchimento roxa */
+  --color: #ffffff; /* Cor do texto branco */
+}
+
+
+/* src/app/pages/loader/loader.page.scss */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.class[class="flex-center"]{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-tracks: center;
+ }
+
+ ion-card-title{
+  text-align: center;
+}
+ion-img{
+  height: 40vh !important;
+  width: auto !important;
+  align-items: center;
+
+}
+

@@ -1,0 +1,19 @@
+
+
+ion-button{
+  margin: 10px;
+}
+ion-toolbar ion-title {
+  color: #B95CF4; /* Roxo */
+}
+/* Estilos para o título e o texto do cartão */
+ion-card-title,
+ion-label {
+  color: #B95CF4; /* Roxo */
+}
+
+/* Estilos para o botão */
+ion-button[size="full"] {
+  --background: #B95CF4; /* Cor de preenchimento roxa */
+  --color: #ffffff; /* Cor do texto branco */
+}

@@ -1,0 +1,143 @@
+/* Main Container Styles */
+.main-container {
+  display: flex;
+  padding-bottom: 20px; /* Bottom padding for content spacing */
+}
+
+/* Ion-Card Container subtitle Styles */
+ion-card-subtitle{
+  text-transform:uppercase;
+  font-weight: bold;
+}
+
+/* Card and Calendar Container Styles */
+.card-calendar-container {
+  display: flex;
+  width: 100%;
+}
+
+.left-card {
+  flex: 1;
+  margin-right: 10px; /* Spacing between card and calendar/events */
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-container,
+.events-list {
+  width: 100%; /* Full width for both calendar and events */
+}
+
+/* Image Styles */
+.image-container ion-img {
+  max-width: 100%; /* Max width of image */
+  max-height: 50%; /* Auto-adjust height */
+}
+
+/* Title Styles */
+ion-toolbar ion-title,
+ion-title {
+  color: #B95CF4; /* Purple color */
+}
+
+/* FAB Button Styles */
+ion-fab-button {
+  --background: #B95CF4; /* Purple fill color */
+  position: relative; /* For tooltip positioning */
+}
+
+/* Tooltip Styles for FAB Button */
+ion-fab-button:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%; /* Tooltip above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+ion-fab-button:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 90%; /* Tooltip arrow positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  z-index: 1000;
+}
+
+/* Footer Link Styles */
+.footer-link {
+  font-size: 14px; /* Smaller font size */
+  color: #B95CF4; /* Purple color */
+}
+
+.footer-link .icon-label {
+  margin: 0; /* No margin for icons */
+}
+
+/* Custom Button Styles */
+.custom-button {
+  color: white;
+  border: none; /* Removes default border */
+  font-weight: bold; /* Bold text */
+  text-align: center;
+  margin: 0 5px; /* Horizontal margin between buttons */
+  padding: 10px 20px; /* Button padding */
+}
+
+.custom-button:hover {
+  background-color: darken(#B95CF4, 10%); /* Darkens the purple color on hover */
+}
+
+.custom-button:focus {
+  box-shadow: 0 0 5px #B95CF4; /* Subtle shadow when focused */
+  outline: none; /* Removes default outline */
+}
+
+.early-diagnosis-button {
+  color: #B95CF4; /* Purple text color */
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 767px) {
+  .card-calendar-container {
+    flex-direction: column; /* Change flexbox direction to column */
+  }
+
+  .left-card,
+  .right-container {
+    width: 100%; /* Full width for both components */
+    margin-right: 0; /* Removes spacing between components */
+  }
+
+  .right-container {
+    margin-top: 10px; /* Top spacing between components */
+  }
+
+  .desktop-title,
+  .desktop-buttons {
+    display: none; /* Hide title and buttons on mobile */
+  }
+
+  ion-label {
+    display: flex;
+    flex-direction: column; /* Change buttons to a column */
+  }
+
+  .custom-button {
+    width: 100%; /* Full width for buttons */
+    margin: 5px 0; /* Vertical margin between buttons */
+  }
+}

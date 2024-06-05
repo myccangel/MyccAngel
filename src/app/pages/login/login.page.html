@@ -1,0 +1,35 @@
+<div class="flex-center" >
+  <ion-card>
+    <ion-card-content>
+      <ion-card-header  class="ion-title">
+        <ion-card-title class="custom-spinner"> Welcome to MyCCAngel</ion-card-title>
+      </ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-img src="https://pbs.twimg.com/media/E1vu04MWYAECE0w.png"></ion-img>
+          </ion-col>
+          <ion-col>
+            <ion-row>
+                 <ion-col ><ion-button size="full" (click)="login()">Login</ion-button></ion-col>
+                <ion-col><ion-button fill="clear" size="full" (click)="register()">Register</ion-button></ion-col>
+              </ion-row>
+            <ion-item>
+              <ion-input label="Email" labelPlacement="floating" placeholder="Enter your email"
+                type="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Password" labelPlacement="floating" placeholder="Enter your password"
+                type="password"></ion-input>
+            </ion-item>
+            <ion-button color="dark" fill="clear" size="full">Forget email/password</ion-button>
+          </ion-col>
+
+        </ion-row>
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+</div>

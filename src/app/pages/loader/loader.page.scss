@@ -1,0 +1,11 @@
+/* src/app/pages/loader/loader.page.scss */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.custom-spinner {
+  --color: var(--purple-ribbon);
+}

@@ -1,0 +1,7 @@
+{
+  "name": "myccangel",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
