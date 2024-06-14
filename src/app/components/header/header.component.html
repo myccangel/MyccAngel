@@ -1,0 +1,13 @@
+<ion-toolbar class="ion-align-items-center ion-justify-content-between">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-img src="https://pbs.twimg.com/media/E1vu04MWYAECE0w.png" style="width: 70px; height: 70px;"></ion-img>
+   <ion-title class="ion-text-center desktop-title" style="margin: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    {{headerTitle}}
+  </ion-title>
+  <ion-buttons slot="end">
+    <ion-button routerLink="/register" (click)="signup()">Sign Up</ion-button>
+    <ion-button routerLink="/login" (click)="login()">Login</ion-button>
+  </ion-buttons>
+</ion-toolbar>

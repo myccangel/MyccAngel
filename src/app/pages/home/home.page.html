@@ -1,18 +1,5 @@
 <ion-header>
-  <ion-toolbar class="ion-align-items-center ion-justify-content-between">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-img src="https://pbs.twimg.com/media/E1vu04MWYAECE0w.png" style="width: 70px; height: 70px;"></ion-img>
-    <!-- Title in the middle -->
-    <ion-title class="ion-text-center desktop-title" style="margin: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-      Make IBD people's lives better everywhere
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/register" (click)="signup()">Sign Up</ion-button>
-      <ion-button routerLink="/login" (click)="login()">Login</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+<app-header headerTitle="Make IBD people's lives better everywhere "></app-header>
 </ion-header>
 
 <ion-content>
@@ -20,21 +7,20 @@
     <ion-item>
       <ion-label style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
         <ion-button color="light" class="custom-button early-diagnosis-button ion-text-left" style="flex: 1; text-align: left;">
-          Early Diagnosis
+          Diagnosis
         </ion-button>
         <ion-button color="light" class="custom-button ion-text-center" style="flex: 1; text-align: center;">
-          Early Doctor Appointment
+          Appointment
         </ion-button>
         <ion-button color="light" class="custom-button ion-text-right" style="flex: 1; text-align: right;">
-          Low-Cost Treatment
+          Treatment
         </ion-button>
       </ion-label>
     </ion-item>
   </ion-list>
 
   <div class="image-container">
-    <!-- Imagem da internet com altura ajustada -->
-    <ion-img src="https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg"></ion-img>
+    <app-swiper-card></app-swiper-card>
   </div>
 
   <div class="main-container">
@@ -86,44 +72,6 @@
   </ion-fab>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar color="light" style="padding: 0; min-height: 50px;"> <!-- Ajusta a altura do toolbar -->
-    <ion-row class="ion-justify-content-center" style="padding: 0; margin: 0;"> <!-- Centraliza os itens -->
-      <ion-col size="auto" style="padding: 0; text-align: center;"> <!-- Centraliza o conteúdo nas colunas -->
-        <ion-button expand="full" fill="clear" href="https://www.facebook.com/seu-facebook" class="footer-link" style="height: 50px;">
-          <ion-icon slot="icon-only" name="logo-facebook" style="margin: 0;"></ion-icon>
-        </ion-button>
-      </ion-col>
-      <ion-col size="auto" style="padding: 0; text-align: center;">
-        <ion-button expand="full" fill="clear" href="https://twitter.com/seu-twitter" class="footer-link" style="height: 50px;">
-          <ion-icon slot="icon-only" name="logo-twitter" style="margin: 0;"></ion-icon>
-        </ion-button>
-      </ion-col>
-      <ion-col size="auto" style="padding: 0; text-align: center;">
-        <ion-button expand="full" fill="clear" href="https://www.linkedin.com/in/seu-linkedin" class="footer-link" style="height: 50px;">
-          <ion-icon slot="icon-only" name="logo-linkedin" style="margin: 0;"></ion-icon>
-        </ion-button>
-      </ion-col>
-      <ion-col size="auto" style="padding: 0; text-align: center;">
-        <ion-button expand="full" fill="clear" href="https://www.instagram.com/seu-instagram" class="footer-link" style="height: 50px;">
-          <ion-icon slot="icon-only" name="logo-instagram" style="margin: 0;"></ion-icon>
-        </ion-button>
-      </ion-col>
-      <ion-col size="auto" style="padding: 0; text-align: center;">
-        <ion-button expand="full" fill="clear" href="mailto:seu-email@example.com" class="footer-link" style="height: 50px;">
-          <ion-icon slot="icon-only" name="mail-outline" style="margin: 0;"></ion-icon> <!-- ícone de mail -->
-        </ion-button>
-      </ion-col>
-      <ion-col size="auto" style="padding: 0; text-align: center;">
-        <ion-button expand="full" fill="clear" href="tel:+1234567890" class="footer-link" style="height: 50px;">
-          <ion-icon slot="icon-only" name="call" style="margin: 0;"></ion-icon>
-        </ion-button>
-      </ion-col>
-      <ion-col size="auto" style="padding: 0; text-align: center;">
-        <ion-button expand="full" fill="clear" href="/search" class="footer-link" style="height: 50px;">
-          <ion-icon slot="icon-only" name="search-outline" style="margin: 0;"></ion-icon> <!-- ícone de pesquisa -->
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-footer>
+<footer>
+<app-footer></app-footer>
+</footer>

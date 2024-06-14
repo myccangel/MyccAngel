@@ -1,4 +1,5 @@
 /* Main Container Styles */
+
 .main-container {
   display: flex;
   padding-bottom: 20px; /* Bottom padding for content spacing */
@@ -88,13 +89,18 @@ ion-fab-button:hover::before {
 }
 
 /* Custom Button Styles */
+
+/* Custom Button Styles */
+
 .custom-button {
   color: white;
   border: none; /* Removes default border */
   font-weight: bold; /* Bold text */
   text-align: center;
   margin: 0 5px; /* Horizontal margin between buttons */
-  padding: 10px 20px; /* Button padding */
+  display: inline-block; /* Keep buttons in the same row */
+  width: fit-content;
+  height: fit-content;
 }
 
 .custom-button:hover {
@@ -105,7 +111,6 @@ ion-fab-button:hover::before {
   box-shadow: 0 0 5px #B95CF4; /* Subtle shadow when focused */
   outline: none; /* Removes default outline */
 }
-
 .early-diagnosis-button {
   color: #B95CF4; /* Purple text color */
 }
@@ -133,11 +138,20 @@ ion-fab-button:hover::before {
 
   ion-label {
     display: flex;
-    flex-direction: column; /* Change buttons to a column */
   }
 
   .custom-button {
-    width: 100%; /* Full width for buttons */
-    margin: 5px 0; /* Vertical margin between buttons */
+    color: white;
+    border: none; /* Removes default border */
+    font-weight: bold; /* Bold text */
+    text-align: center;
+    margin: 0 5px; /* Horizontal margin between buttons */
+    display: inline-flex; /* Keep buttons in the same row and enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Adjust width as needed */
+    height: 100%; /* Adjust height as needed */
+    font-size: 0.9em; /* Adjust font size for smaller screens */
+
   }
 }

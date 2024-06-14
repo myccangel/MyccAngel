@@ -1,11 +1,11 @@
-
-
-ion-button{
+ion-button {
   margin: 10px;
 }
+
 ion-toolbar ion-title {
   color: #B95CF4; /* Roxo */
 }
+
 /* Estilos para o título e o texto do cartão */
 ion-card-title,
 ion-label {
@@ -13,7 +13,27 @@ ion-label {
 }
 
 /* Estilos para o botão */
-ion-button[size="full"] {
+.registerButton {
   --background: #B95CF4; /* Cor de preenchimento roxa */
   --color: #ffffff; /* Cor do texto branco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto; /* Center the button horizontally */
+  max-width: 300px; /* Optional: Limit the maximum width */
+}
+/* responsive design */
+@media (max-width: 576px) {
+  ion-card {
+    margin: 5px;
+  }
+
+  ion-item {
+    --padding-start: 10px;
+    --padding-end: 10px;
+  }
+
+  .registerButton {
+    width: 90%;
+  }
 }

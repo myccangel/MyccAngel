@@ -1,6 +1,7 @@
 import { Router} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -19,6 +20,8 @@ export class HomePage implements OnInit {
       { title: 'Event 2', date: '2024-06-05' }
     ];
   }
+
+
 
   allrecords(){
     this.router.navigate(['records']);

@@ -1,10 +1,7 @@
-ion-button[color="dark"]{
-  text-transform: initial;
-}
-
 /* Estilos para o título do cartão */
 ion-card-title {
   color: #B95CF4; /* Roxo */
+  text-align: center;
 }
 
 /* Estilos para os textos dos itens de entrada */
@@ -18,8 +15,7 @@ ion-button[size="full"] {
   --color: #ffffff; /* Cor do texto branco */
 }
 
-
-/* src/app/pages/loader/loader.page.scss */
+/* Centralização flexível */
 .flex-center {
   display: flex;
   justify-content: center;
@@ -27,20 +23,39 @@ ion-button[size="full"] {
   height: 100%;
 }
 
-.class[class="flex-center"]{
+.class[class="flex-center"] {
   display: flex;
   align-items: center;
   justify-content: center;
   align-tracks: center;
- }
-
- ion-card-title{
-  text-align: center;
 }
-ion-img{
-  height: 40vh !important;
+
+/* Estilo da imagem */
+ion-img {
+  height: 30vh !important;
   width: auto !important;
   align-items: center;
-
+  margin-top: auto;
 }
 
+/* Responsividade */
+@media only screen and (max-width: 600px) {
+  ion-col img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  ion-col:first-child {
+    order: -1; /* Muda a ordem para que a imagem fique acima nos dispositivos móveis */
+    text-align: center;
+  }
+
+  ion-col ion-button {
+    width: 100%; /* Faz os botões ocuparem a largura total */
+    font-size: 14px; /* Ajusta o tamanho do texto dos botões */
+  }
+
+  ion-item {
+    width: 100%; /* Faz os itens ocuparem a largura total */
+  }
+}

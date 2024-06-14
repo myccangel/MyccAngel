@@ -1,0 +1,47 @@
+
+/* Image Styles */
+.image-container ion-img {
+  max-width: 100%; /* Max width of image */
+  max-height: 50%; /* Auto-adjust height */
+}
+
+/* Title Styles */
+ion-toolbar ion-title,
+ion-title {
+  color: #B95CF4; /* Purple color */
+}
+
+/* FAB Button Styles */
+ion-fab-button {
+  --background: #B95CF4; /* Purple fill color */
+  position: relative; /* For tooltip positioning */
+}
+
+/* Tooltip Styles for FAB Button */
+ion-fab-button:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%; /* Tooltip above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+ion-fab-button:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 90%; /* Tooltip arrow positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  z-index: 1000;
+}
+

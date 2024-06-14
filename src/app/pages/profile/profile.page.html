@@ -1,121 +1,215 @@
+
+
 <ion-content fullscreen="true" slot="fixed">
-  <div class="card">
 
-    <div class="header">
-      <div class="avatar">
-        <img src="https://media.licdn.com/dms/image/D4E03AQEPuEFpai8f4Q/profile-displayphoto-shrink_400_400/0/1677082915350?e=2147483647&v=beta&t=I4ucGuL4uMhjv4BDwp3jDPmLFxOXJeDLh8wEEdgPWG4" alt="">
-      </div>
-      <div class="name-info">Name</div>
-      <div class="stats">Posts: 3 Groups: 10 Friends: 45</div>
+  <div class="header">
+ <app-header headerTitle="Profile"></app-header>
+
+    <!-- Header content -->
+    <div class="avatar">
+
+      <img src="https://media.licdn.com/dms/image/D4E03AQEPuEFpai8f4Q/profile-displayphoto-shrink_400_400/0/1677082915350?e=2147483647&v=beta&t=I4ucGuL4uMhjv4BDwp3jDPmLFxOXJeDLh8wEEdgPWG4" alt="">
     </div>
+    <div class="name-info">Derek Prates</div>
+    <div class="stats">Posts: 3 Groups: 10 Friends: 45</div>
 
+  </div>
+
+  <ion-buttons class="edit-button">
+    <ion-button routerLink="Edit">Update</ion-button>
+  </ion-buttons>
+
+  <div class="card">
+    <!-- First card -->
     <div class="card-body">
+      <!-- Card body -->
       <div class="left-section">
+        <!-- Left section content -->
         <ion-card class="user-meta-card">
+          <ion-card-header>
+            <ion-card-title class="custom-card-title">User Information</ion-card-title>
+          </ion-card-header>
           <ion-card-content>
+            <!-- User information content -->
             <div class="user-meta">
+              <!-- User meta content -->
               <div class="bio">
                 <span>Bio: </span>
                 <ion-item lines="none">
-                  <ion-input value="New detected"></ion-input>
+                  <ion-textarea placeholder="Enter your bio here..."></ion-textarea>
                 </ion-item>
               </div>
-              <div class="status">
+              <!-- Closing div for bio -->
+              <div class="input-group">
                 <span>Status: </span>
                 <ion-item lines="none">
                   <ion-input value="Treatment"></ion-input>
                 </ion-item>
               </div>
-              <div class="location">
+              <!-- Closing div for status -->
+              <div class="input-group">
                 <span>Location: </span>
                 <ion-item lines="none">
                   <ion-input value="Dublin"></ion-input>
                 </ion-item>
               </div>
-              <div class="contact">
+              <!-- Closing div for location -->
+              <div class="input-group">
                 <span>Contact: </span>
                 <ion-item lines="none">
                   <ion-input type="tel" value="(083) 067-0343"></ion-input>
                 </ion-item>
               </div>
-              <div class="type">
+              <!-- Closing div for contact -->
+              <div class="input-group">
                 <span>Type of IBD: </span>
                 <ion-item lines="none">
                   <ion-input value="Type 1"></ion-input>
                 </ion-item>
               </div>
-              <div class="years">
+              <!-- Closing div for type -->
+              <div class="input-group">
                 <span>How long detected: </span>
                 <ion-item lines="none">
                   <ion-input value="2 years"></ion-input>
                 </ion-item>
               </div>
+              <!-- Closing div for years -->
+
+              <!-- Closing div for years -->
             </div>
+            <!-- Closing div for user-meta -->
           </ion-card-content>
         </ion-card>
+        <!-- Closing div for user-meta-card -->
       </div>
+      <!-- Closing div for left-section -->
       <div class="right-section">
-        <ion-card-header>
-          <ion-card-title>Contact List</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-item>
-            <ion-avatar slot="start">
-              <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
-            </ion-avatar>
-            <ion-label>
-              <h2>John Doe</h2>
-              <p>(123) 456-7890</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-avatar slot="start">
-              <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
-            </ion-avatar>
-            <ion-label>
-              <h2>Jane Doe</h2>
-              <p>(987) 654-3210</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-avatar slot="start">
-              <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
-            </ion-avatar>
-            <ion-label>
-              <h2>Paulo Doe</h2>
-              <p>(987) 654-3210</p>
-            </ion-label>
-          </ion-item>
-        </ion-card-content>
+        <!-- Right section content -->
+        <ion-card class="user-meta-card">
+          <ion-card-header>
+            <ion-card-title class="custom-card-title">Contact List</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Contact list content -->
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
+              </ion-avatar>
+              <ion-label>
+                <h2>John Doe</h2>
+                <p>(123) 456-7890</p>
+              </ion-label>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
+              </ion-avatar>
+              <ion-label>
+                <h2>John Doe</h2>
+                <p>(123) 456-7890</p>
+              </ion-label>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
+              </ion-avatar>
+              <ion-label>
+                <h2>John Doe</h2>
+                <p>(123) 456-7890</p>
+              </ion-label>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
+              </ion-avatar>
+              <ion-label>
+                <h2>John Doe</h2>
+                <p>(123) 456-7890</p>
+              </ion-label>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
+              </ion-avatar>
+              <ion-label>
+                <h2>John Doe</h2>
+                <p>(123) 456-7890</p>
+              </ion-label>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg" />
+              </ion-avatar>
+              <ion-label>
+                <h2>John Doe</h2>
+                <p>(123) 456-7890</p>
+              </ion-label>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
+            </ion-item>
+            <!-- More items -->
+          </ion-card-content>
+        </ion-card>
+        <!-- Closing div for user-meta-card -->
       </div>
+      <!-- Closing div for right-section -->
     </div>
+    <!-- Closing div for card-body -->
   </div>
+  <!-- Closing div for card -->
 
-  <div class="media-card">
-    <ion-card-header>
-      <ion-card-title>Media Pictures</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="media-grid">
-        <ion-img src="media1.jpg"></ion-img>
-        <ion-img src="media2.jpg"></ion-img>
-        <ion-img src="media3.jpg"></ion-img>
-        <ion-img src="media4.jpg"></ion-img>
-        <ion-img src="media5.jpg"></ion-img>
-        <ion-img src="media6.jpg"></ion-img>
-        <ion-img src="media7.jpg"></ion-img>
-        <ion-img src="media8.jpg"></ion-img>
-        <ion-img src="media9.jpg"></ion-img>
-      </div>
-    </ion-card-content>
+  <div class="card">
+    <!-- Second card -->
+    <div class="card-body">
+      <!-- Card body -->
+    <div class="media-card">
+      <!-- Media card content -->
+      <ion-card-header>
+        <ion-card-title class="custom-card-title-center">Media Pictures</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Media pictures content -->
+        <div class="media-grid">
+          <!-- Media grid content -->
+          <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
+          <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
+          <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
+          <!-- More images -->
+        </div>
+        <!-- Closing div for media-grid -->
+      </ion-card-content>
+      <!-- Closing div for ion-card-content -->
+    </div>
+    <!-- Closing div for media-card -->
   </div>
+  <!-- Closing div for card-body -->
+  </div>
+  <!-- Closing div for card -->
 
+  <div class="card">
+    <!-- Second card -->
+    <div class="card-body">
+      <!-- Card body -->
   <div class="message-board">
+    <!-- Third card -->
     <ion-card-header>
-      <ion-card-title>Message Board</ion-card-title>
+      <ion-card-title class="custom-card-title-center">Message Board</ion-card-title>
     </ion-card-header>
     <ion-card-content>
+      <!-- Message board content -->
       <ion-list>
+        <!-- Message list content -->
         <ion-item>
           <ion-label>
             <h2>Message 1</h2>
@@ -124,17 +218,29 @@
         </ion-item>
         <ion-item>
           <ion-label>
-            <h2>Message 2</h2>
-            <p>Content of the second message.</p>
+            <h2>Message 1</h2>
+            <p>Content of the first message.</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-label>
-            <h2>Message 3</h2>
-            <p>Content of the third message.</p>
+            <h2>Message 1</h2>
+            <p>Content of the first message.</p>
           </ion-label>
         </ion-item>
       </ion-list>
+      <!-- Closing div for ion-list -->
     </ion-card-content>
+    <!-- Closing div for ion-card-content -->
   </div>
+  <!-- Closing div for message-board -->
+</div>
+<!-- Closing div for card-body -->
+</div>
+<!-- Closing div for card -->
+<footer>
+  <app-footer></app-footer>
+  </footer>
+
 </ion-content>
+<!-- Closing div for ion-content -->

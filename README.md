@@ -96,3 +96,15 @@ To get a local copy up and running, follow these steps:
     ```bash
     ionic g component components/'component name'
     ```   
+    ```    
+8. **Install ngrx**:
+    ```bash
+    npm install @ngrx/store --save
+    npm install @ngrx/store-devtools --save
+    ```   
+    ```    
+7. **Create Components**:
+    ```bash
+    ionic g component components/'component name'
+    ```   
+
