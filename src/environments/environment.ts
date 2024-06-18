@@ -4,14 +4,10 @@
 
 export const environment = {
   production: false,
+  firebaseConfig: {
+    apiKey: "",
 
-  firebaseConfig:{ apiKey:"test"},/* {
-
-    authDomain:
-    projectId:
-    messagingSenderId:
-    appId:
-  } */
+  }
 };
 
 /*

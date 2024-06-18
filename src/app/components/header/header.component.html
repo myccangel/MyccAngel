@@ -1,13 +1,14 @@
-<ion-toolbar class="ion-align-items-center ion-justify-content-between">
+<ion-toolbar class="ion-align-items-center ion-justify-content-between responsive-toolbar">
   <ion-buttons slot="start">
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
-  <ion-img src="https://pbs.twimg.com/media/E1vu04MWYAECE0w.png" style="width: 70px; height: 70px;"></ion-img>
-   <ion-title class="ion-text-center desktop-title" style="margin: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+  <ion-img src="https://pbs.twimg.com/media/E1vu04MWYAECE0w.png" class="header-image"></ion-img>
+  <ion-title class="ion-text-center desktop-title">
     {{headerTitle}}
   </ion-title>
-  <ion-buttons slot="end">
-    <ion-button routerLink="/register" (click)="signup()">Sign Up</ion-button>
-    <ion-button routerLink="/login" (click)="login()">Login</ion-button>
+  <ion-buttons slot="end" class="responsive-buttons">
+    <ion-button class="round-button" routerLink="/register" (click)="signup()" shape="round">Sign Up</ion-button>
+    <ion-button class="round-button" routerLink="/login" (click)="login()" shape="round">Login</ion-button>
+    <ion-button class="round-button" routerLink="/donation" (click)="donation()" shape="round">Donate</ion-button>
   </ion-buttons>
 </ion-toolbar>

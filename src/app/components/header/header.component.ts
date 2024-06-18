@@ -13,7 +13,9 @@ export class HeaderComponent  implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   signup(){
     this.router.navigate(['register']);
@@ -21,6 +23,17 @@ export class HeaderComponent  implements OnInit {
   login(){
     this.router.navigate(['login']);
   }
+  donation(){
+    this.router.navigate(['donation']);
+  }
+  photo(){
+    this.router.navigate(['photo']);
+  }
+
+  video(){
+    this.router.navigate(['video']);
+  }
+
 
 
 }

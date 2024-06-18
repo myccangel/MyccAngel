@@ -28,13 +28,41 @@
     <div class="card-calendar-container">
       <!-- Card -->
       <ion-card class="left-card">
-        <ion-card-content>
-        <ion-card-header>
-          <ion-card-subtitle>Last Records</ion-card-subtitle>
-        </ion-card-header>
-        <app-records-card status="Hold" updateAt="24/04/2024" createAt="24/04/2024" notes="New add"></app-records-card>
-          <ion-button *ngIf="hasFooter" color="success" fill="clear" size="full" (click)="allrecords()">See all...</ion-button>
-        </ion-card-content>
+        <div class="card">
+          <!-- Second card -->
+          <div class="card-body">
+            <!-- Card body -->
+            <div class="partner-card">
+              <!-- partner card content -->
+              <ion-card-header>
+                <ion-card-title class="custom-card-title-center">Our Partners</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <!-- partner pictures content -->
+                <div class="partner-grid">
+                  <!-- partner grid content -->
+                  <div class="partner-item">
+                    <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
+                    <div class="partner-name">Partner 1</div>
+                  </div>
+                  <div class="partner-item">
+                    <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
+                    <div class="partner-name">Partner 2</div>
+                  </div>
+                  <div class="partner-item">
+                    <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
+                    <div class="partner-name">Partner 3</div>
+                  </div>
+                  <!-- Repeat the above block for each image -->
+                </div>
+                <!-- Closing div for partner-grid -->
+              </ion-card-content>
+              <!-- Closing div for ion-card-content -->
+            </div>
+            <!-- Closing div for partner-card -->
+          </div>
+          <!-- Closing div for card-body -->
+        </div>
       </ion-card>
       <!-- Calendário e eventos -->
       <div class="right-container">

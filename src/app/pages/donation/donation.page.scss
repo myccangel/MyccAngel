@@ -41,6 +41,7 @@
   width: 100%; /* Make sure the text takes full width */
   margin-left: 7.5em;
   padding-right: 0; /* Reset padding */
+
 }
 
 /* Responsiveness */
@@ -95,25 +96,20 @@ ion-chip {
   color: #303940;
   background-color: transparent;
 }
-
 .card {
-  flex-direction: column;
-  width: 100%;
+  margin: 0 auto;
   height: 100%;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
-
 .card-body {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
   padding: 30px;
   justify-content: space-between; /* Equal space between the cards */
   align-items: stretch; /* Force both cards to have the same height */
+  width: 100%;
+  height: 100%;
 }
 .media-card {
   margin-top: 20px;
@@ -145,51 +141,29 @@ ion-chip {
   margin: 0 auto; /* Center horizontally */
   display: block; /* Ensure block-level for centering */
 }
-
-
-/* Contact List Styles */
-
-.contact-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-.contact-avatar {
-  margin-bottom: 15px;
-}
-.contact-avatar img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 2px solid #B95CF4;
-}
-.contact-info h2 {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
-}
-.contact-info ion-buttons {
-  display: flex;
-  gap: 10px;
-}
-.contact-grid {
+.media-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: #fff;
   width: 100%;
-  gap: 20px;
 }
+.media-item {
+  position: relative;
+  text-align: center;
+  width: fit-content;
 
-.see-button {
-  position: fixed;
-  top: -150px;
-  right: -40px;
-  border-radius: 15px;
+
+}
+.media-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #B95CF4;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 0 0 8px 8px;
+  box-sizing: border-box;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Increasing shadow intensity */
 }
 
 @media only screen and (max-width: 600px) {
@@ -197,7 +171,67 @@ ion-chip {
     flex-direction: column; /* Stack cards vertically */
     align-items: center; /* Center align cards */
   }
-  .contact-list {
-    grid-template-columns: repeat(1, 1fr); /* Stack contacts vertically */
+}
+
+.donation-section {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 10px;
   }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input, textarea {
+    width: 80%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input[type="number"], input[type="text"], input[type="email"] {
+    height: 40px;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 80px;
+  }
+}
+
+.donate-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 80%;
+  margin: 20px 0;
+}
+
+.donate-button:hover {
+  background-color: #0056b3;
 }

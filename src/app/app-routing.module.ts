@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth/auth-guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'loader', pathMatch: 'full' },
@@ -36,17 +37,40 @@ export const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule),
-    data: { pageName: 'Profile' }
+    data: { pageName: 'Profile' },
+    canLoad: [AuthGuard]
   },
   {
     path: 'library',
     loadChildren: () => import('./pages/library/library.module').then( m => m.LibraryPageModule),
-    data: { pageName: 'Library' }
+    data: { pageName: 'Library' },
+    canLoad: [AuthGuard]
   },
   {
     path: 'connections',
-    loadChildren: () => import('./pages/connections/connections.module').then( m => m.ConnectionsPageModule)
+    loadChildren: () => import('./pages/connections/connections.module').then( m => m.ConnectionsPageModule),
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'donation',
+    loadChildren: () => import('./pages/donation/donation.module').then( m => m.DonationPageModule)
+  },
+  {
+    path: 'video',
+    loadChildren: () => import('./pages/video/video.module').then( m => m.VideoPageModule),
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'photo',
+    loadChildren: () => import('./pages/photo/photo.module').then( m => m.PhotoPageModule),
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('./pages/blog/blog.module').then( m => m.BlogPageModule),
+    canLoad: [AuthGuard]
   }
+
 ];
 
 @NgModule({

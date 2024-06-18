@@ -1,0 +1,48 @@
+<ion-content fullscreen="true" slot="fixed">
+  <div class="header">
+    <app-header headerTitle="Donation"></app-header>
+    <!-- Header content -->
+    <div class="avatar">
+      <img src="https://media.licdn.com/dms/image/D4E03AQEPuEFpai8f4Q/profile-displayphoto-shrink_400_400/0/1677082915350?e=2147483647&v=beta&t=I4ucGuL4uMhjv4BDwp3jDPmLFxOXJeDLh8wEEdgPWG4" alt="">
+    </div>
+    <div class="name-info">Derek Prates</div>
+    <div class="stats">Posts: 3 Groups: 10 Friends: 45</div>
+  </div>
+
+
+<!-- Donation Section -->
+ <div class="card">
+    <!-- First card -->
+    <div class="card-body">
+<div class="donation-section">
+  <h2>Support IBD team</h2>
+  <p>Your support helps IDB team to continue their work. Every donation, big or small, makes a difference.</p>
+  <form action="/submit-donation" method="post">
+    <div class="form-group">
+      <label for="donation-amount">Donation Amount:</label>
+      <input type="number" id="donation-amount" name="amount" placeholder="$" required>
+    </div>
+    <div class="form-group">
+      <label for="donor-name">Your Name:</label>
+      <input type="text" id="donor-name" name="name" placeholder="Derek Prates" required>
+    </div>
+    <div class="form-group">
+      <label for="donor-email">Your Email:</label>
+      <input type="email" id="donor-email" name="email" placeholder="derek@example.com" required>
+    </div>
+    <div class="form-group">
+      <label for="donation-message">Message:</label>
+      <textarea id="donation-message" name="message" placeholder="Add a message (optional)"></textarea>
+    </div>
+    <button type="submit" class="donate-button">Donate</button>
+  </form>
+</div>
+</div>
+</div>
+
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+
+</ion-content>

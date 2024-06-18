@@ -96,7 +96,7 @@ describe('LoginPage', () => {
     // Verify loadingState.show == false
     // Verify message was shown
     fixture.detectChanges();
-    store.dispatch(recoverPassword());
+    store.dispatch(recoverPassword({email: 'any@email.com'}));
     store.dispatch(recoverPasswordSuccess());
     store.select('loading').subscribe(loadingState =>{
       expect(loadingState.show).toBeFalsy();
@@ -111,7 +111,7 @@ describe('LoginPage', () => {
     // Expect loading not showing
     // Verify error message was shown
     fixture.detectChanges();
-    store.dispatch(recoverPassword());
+    store.dispatch(recoverPassword({email: 'any@email.com'}));
     store.dispatch(recoverPasswordFail({error: "message"}));
     store.select('loading').subscribe(loadingState =>{
       expect(loadingState.show).toBeFalsy();
@@ -152,7 +152,7 @@ describe('LoginPage', () => {
     //page.querySelector('#loginButton').click();
 
     fixture.detectChanges();
-    store.dispatch(login());
+    store.dispatch(login({email: 'any@email.com', password: "anyPassword"}));
     store.dispatch(loginSuccess({user: new User()}));
 
     store.select('loading').subscribe(loadingState =>{
@@ -163,6 +163,7 @@ describe('LoginPage', () => {
     })
     expect(router.navigate).toHaveBeenCalledWith(['home'])
   })
+
   it('Given user is loggingin, when fail, then hide loading and show error message', () =>{
     spyOn(toastController, 'create').and.returnValue(<any> Promise.resolve({present: ()=>{}}));
     //spyOn(authService, 'login').and.returnValue(throwError({ message: 'error' }));
@@ -177,7 +178,7 @@ describe('LoginPage', () => {
     //component.form.get('password')?.setValue('anyPassword');
     //page.querySelector('#loginButton').click();
     fixture.detectChanges();
-    store.dispatch(login());
+    store.dispatch(login({email: 'error@email.com', password: 'anyPassword'}));
     store.dispatch(loginFail({error:{message: 'error message'}}));
     store.select('loading').subscribe(loadingState =>{
       expect(loadingState.show).toBeFalsy();

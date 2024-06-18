@@ -1,47 +1,97 @@
+.hidden-menu ion-content {
+  display: none !important;
+}
 
-/* Image Styles */
+/* General Styles */
 .image-container ion-img {
   max-width: 100%; /* Max width of image */
   max-height: 50%; /* Auto-adjust height */
 }
 
-/* Title Styles */
-ion-toolbar ion-title,
-ion-title {
-  color: #B95CF4; /* Purple color */
+ion-toolbar {
+  ion-title {
+    color: #B95CF4; /* Purple color */
+  }
+
+  ion-fab-button {
+    --background: #B95CF4; /* Purple fill color */
+    position: relative; /* For tooltip positioning */
+  }
+
+  /* Tooltip Styles for FAB Button */
+  ion-fab-button:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%; /* Tooltip above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+    z-index: 1000;
+  }
+
+  ion-fab-button:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 90%; /* Tooltip arrow positioning */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    z-index: 1000;
+  }
 }
 
-/* FAB Button Styles */
-ion-fab-button {
-  --background: #B95CF4; /* Purple fill color */
-  position: relative; /* For tooltip positioning */
+.round-button {
+  --background: #B95CF4;
+  --border-radius: 50px; /* Ensures the buttons are rounded */
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  color: #fff; /* Text color white */
+  margin: 5px; /* Adds some space between buttons */
 }
 
-/* Tooltip Styles for FAB Button */
-ion-fab-button:hover::after {
-  content: attr(title);
+.responsive-toolbar .header-image {
+  width: 70px;
+  height: 70px;
+}
+
+.desktop-title {
+  margin: auto;
   position: absolute;
-  bottom: 100%; /* Tooltip above the button */
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  white-space: nowrap;
-  font-size: 14px;
-  z-index: 1000;
+  transform: translate(-50%, -50%);
 }
 
-ion-fab-button:hover::before {
-  content: '';
-  position: absolute;
-  bottom: 90%; /* Tooltip arrow positioning */
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: #333 transparent transparent transparent;
-  z-index: 1000;
-}
+@media (max-width: 768px) {
+  .desktop-title {
+    display: none;
+  }
 
+  .round-button {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 4px;
+    --padding-bottom: 4px;
+    font-size: 12px;
+  }
+
+  .responsive-toolbar .header-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .responsive-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
