@@ -53,7 +53,7 @@ describe('LoginPage', () => {
   /*it('should go to home page on login button', () => {
     spyOn(router, 'navigate');
     component.login();
-    expect(router.navigate).toHaveBeenCalledWith(['home']);
+    expect(router.navigate).toHaveBeenCalledWith(['profile']);
   });
 */
   it('It should go to register page on register button', () => {
@@ -137,7 +137,7 @@ describe('LoginPage', () => {
       expect(loginState.isLoggingIn).toBeTruthy();
     })
   })
-  it('Given user is loggingin, when success, then hide loading and send user to home page', () =>{
+  it('Given user is loggingin, when success, then hide loading and send user to profile page', () =>{
     spyOn(router, 'navigate');
     //spyOn(authService, 'login').and.returnValue(of(new User()))
     // Start page
@@ -161,7 +161,7 @@ describe('LoginPage', () => {
     store.select('login').subscribe(loginState =>{
       expect(loginState.isLoggedIn).toBeTruthy();
     })
-    expect(router.navigate).toHaveBeenCalledWith(['home'])
+    expect(router.navigate).toHaveBeenCalledWith(['profile'])
   })
 
   it('Given user is loggingin, when fail, then hide loading and show error message', () =>{

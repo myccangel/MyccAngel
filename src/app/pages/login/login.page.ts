@@ -72,7 +72,7 @@
 
     private onIsLoggedIn(loginState: LoginState) {
       if (loginState.isLoggedIn) {
-        this.router.navigate(['home']);
+        this.router.navigate(['profile']);
       }
     }
 
