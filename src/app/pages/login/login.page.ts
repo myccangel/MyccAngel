@@ -7,7 +7,7 @@
   import { AppState } from 'src/store/AppState';
   import { hide, show } from 'src/store/loading/loading.actions';
   import { login, loginFail, loginSuccess, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from 'src/store/login/login.actions';
-  import { ToastController } from '@ionic/angular';
+  import { NavController, ToastController } from '@ionic/angular';
   import { Subscription } from 'rxjs';
   import { AuthService } from 'src/app/services/auth/auth.service';
 
@@ -22,6 +22,7 @@
     loginStateSubscription: Subscription | undefined;
 
     constructor(
+      private navController: NavController,
       private router: Router,
       private formBuilder: FormBuilder,
       private store: Store<AppState>,
@@ -72,7 +73,7 @@
 
     private onIsLoggedIn(loginState: LoginState) {
       if (loginState.isLoggedIn) {
-        this.router.navigate(['profile']);
+        this.navController.navigateRoot('profile');
       }
     }
 

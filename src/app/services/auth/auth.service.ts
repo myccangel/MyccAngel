@@ -1,9 +1,11 @@
+import { register } from 'swiper/element/bundle';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/model/user/User';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import { UserRegister } from 'src/app/model/user/UserRegister';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +13,19 @@ import 'firebase/compat/auth';
 export class AuthService {
 
   constructor( private auth: AngularFireAuth) { }
+//return a Observable<void> as i am not looking for API response
+register(userRegister: UserRegister): Observable<void> {
+  return new Observable<void>(observer => {
+    setTimeout(() => {
+      if (userRegister.email === "error@email.com") {
+        observer.error({ message: "Email already registered" });
+      } else {
+        observer.next();
+        observer.complete();
+      }
+    }, 3000);
+  });
+}
 
   recoverEmailPassword(email:string): Observable<void> {
     return new Observable<void>(observer=>{

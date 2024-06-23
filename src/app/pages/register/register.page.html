@@ -37,7 +37,7 @@
       </ion-card-header>
       <ion-card-content formGroupName="address">
         <ion-item>
-          <ion-input label="street" labelPlacement="floating" placeholder="Enter your address" type="text" formControlName="street"></ion-input>
+          <ion-input label="street" labelPlacement="floating" placeholder="Enter your address street" type="text" formControlName="street" ></ion-input>  <!-- #autocomplete-->
           <app-error-message message="Street is mandatory" [field]="registerForm.getForm().get('address')?.get('street')!" error="required"></app-error-message>
         </ion-item>
         <ion-item>
