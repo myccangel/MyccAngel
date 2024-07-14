@@ -1,5 +1,6 @@
 import { Router} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { SwiperOptions } from 'swiper/types/swiper-options';
 
 
 @Component({
@@ -13,14 +14,20 @@ export class HomePage implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
-    // Initial load of events, replace with your logic
-    this.events = [
-      { title: 'Event 1', date: '2024-06-01' },
-      { title: 'Event 2', date: '2024-06-05' }
-    ];
-  }
+  option: SwiperOptions = {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: true,
+  };
 
+
+  ngOnInit() {
+
+  }
 
 
   allrecords(){
@@ -33,18 +40,14 @@ export class HomePage implements OnInit {
     this.router.navigate(['login']);
   }
 
-  onDateChange(event: any) {
-    const selectedDate = event.detail.value;
-    console.log('Selected date: ', selectedDate);
-    // Fetch and display events for the selected date
-    // Replace with your logic to fetch events
-    this.events = this.getEventsForDate(selectedDate);
+
+
+  changeCategory(event: any, category: string) {
+    const buttons = document.querySelectorAll('.category-button');
+    buttons.forEach(button => button.classList.remove('active'));
+    event.target.classList.add('active');
+    // Fetch and display data for the selected category
+    console.log('Selected category: ', category);
   }
 
-  getEventsForDate(date: string): { title: string; date: string }[] {
-    // Replace with your actual event fetching logic
-    return [
-      { title: `Event on ${date}`, date }
-    ];
-  }
 }

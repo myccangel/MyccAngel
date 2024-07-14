@@ -1,0 +1,42 @@
+<ion-content fullscreen="true" slot="fixed">
+  <div class="header">
+    <app-header></app-header>
+    <div class="image-container">
+      <app-swiper-card></app-swiper-card>
+    </div>
+  </div>
+
+  <!-- Donation Button -->
+  <button id="donationButton" [ngClass]="{'donation-button': true, 'visible': donationButtonVisible}">Donate</button>
+
+
+  <!-- About Us Section -->
+  <div class="card">
+    <div class="card-body">
+      <div class="about-us-section">
+
+        <h2>About Us</h2>
+        <p>Welcome to MyCCAngel, a non-profit organization dedicated to supporting individuals living with Inflammatory Bowel Disease (IBD). Our mission is to provide a comprehensive online platform that empowers patients to manage their condition effectively, connects them with a supportive community, and offers access to valuable resources.</p>
+
+        <p>Our goal is to bridge the gap in IBD care by providing:</p>
+
+        <ul>
+          <li>A safe space for community building through chat rooms, webinars, and group discussions</li>
+          <li>A live assistant AI chatbot for answers to IBD-related questions and dietary guidance</li>
+          <li>A toilet location map for easy access to nearby facilities</li>
+          <li>A resources library featuring articles, videos, podcasts, and updates on IBD management</li>
+        </ul>
+
+        <p>We aim to facilitate early diagnosis, timely medical appointments, and affordable treatment options. Our platform is designed to be a one-stop shop for IBD patients, providing them with the tools and support they need to navigate their journey.</p>
+
+        <p>At MyCCAngel, we believe that no one should face IBD alone. Join our community today and become part of a supportive network that understands your needs and is dedicated to helping you thrive.</p>
+
+        <p>Thank you for visiting MyCCAngel. Together, let's make a difference in the lives of IBD patients worldwide!</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</ion-content>

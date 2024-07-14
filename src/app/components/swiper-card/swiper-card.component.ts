@@ -1,15 +1,73 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-swiper-card',
   templateUrl: './swiper-card.component.html',
-  styleUrls: ['./swiper-card.component.scss'],
+  styleUrls: ['./swiper-card.component.scss']
 })
-export class SwiperCardComponent  implements OnInit {
+export class SwiperCardComponent implements OnInit, OnDestroy {
+  images = [
+    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
+    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
+    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
+    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
+    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
+    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
+    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
+  ];
 
-  constructor() { }
+  currentSlideIndex = 0;
+  intervalId: any;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.startAutoSlide();
+  }
 
+  ngOnDestroy() {
+    this.stopAutoSlide();
+  }
+
+  startAutoSlide() {
+    this.intervalId = setInterval(() => {
+      this.nextSlide();
+    }, 5000); // Slide every 3 seconds
+  }
+
+  stopAutoSlide() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  showSlide(index: number) {
+    const slides = document.querySelector('.slides') as HTMLElement;
+    const dots = document.querySelectorAll('.dot');
+
+    // Adjust index for wrap-around
+    if (index >= this.images.length) {
+      this.currentSlideIndex = 0;
+    } else if (index < 0) {
+      this.currentSlideIndex = this.images.length - 1;
+    } else {
+      this.currentSlideIndex = index;
+    }
+
+    slides.style.transform = `translateX(${-100 * this.currentSlideIndex}%)`;
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === this.currentSlideIndex);
+    });
+  }
+
+  nextSlide() {
+    this.showSlide(this.currentSlideIndex + 1);
+  }
+
+  previousSlide() {
+    this.showSlide(this.currentSlideIndex - 1);
+  }
+
+  goToSlide(index: number) {
+    this.showSlide(index);
+  }
 }

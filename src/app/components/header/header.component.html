@@ -1,14 +1,33 @@
 <ion-toolbar class="ion-align-items-center ion-justify-content-between responsive-toolbar">
   <ion-buttons slot="start">
+    <ion-back-button defaultHref="/" icon="chevron-back-outline"></ion-back-button> <!-- Back button added here -->
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
-  <ion-img src="https://pbs.twimg.com/media/E1vu04MWYAECE0w.png" class="header-image"></ion-img>
-  <ion-title class="ion-text-center desktop-title">
-    {{headerTitle}}
+
+
+  <ion-img src="../../../assets/images/logo.png" class="header-logo"></ion-img>
+  <ion-title class="ion-text-center desktop-title" id="dynamic-title">
+    Early Diagnosis
   </ion-title>
   <ion-buttons slot="end" class="responsive-buttons">
-    <ion-button class="round-button" routerLink="/register" (click)="signup()" shape="round">Sign Up</ion-button>
-    <ion-button class="round-button" routerLink="/login" (click)="login()" shape="round">Login</ion-button>
-    <ion-button class="round-button" routerLink="/donation" (click)="donation()" shape="round">Donate</ion-button>
+    <ion-button class="signIn-button" routerLink="/login" (click)="login()" shape="round">Sign Up</ion-button>
+    <ion-button class="login-button" routerLink="/login" (click)="login()" shape="round">Login</ion-button>
+  </ion-buttons>
+  <ion-buttons class="donation-button">
+    <ion-button class="round-button-donation" routerLink="/donation" (click)="donation()">Donate</ion-button>
   </ion-buttons>
 </ion-toolbar>
+<div class="menu-container">
+  <nav class="menu-selector">
+    <ul>
+      <li><a routerLink="/home" (click)="home()">Home</a></li>
+      <li><a routerLink="/about-ibd" (click)="aboutIbd()">About IBD</a></li>
+      <li><a routerLink="/ai-help" (click)="aiHelp()">AI Help</a></li>
+      <li><a routerLink="/resources" (click)="resources()">Resources</a></li>
+      <li><a routerLink="/about-us" (click)="aboutUs()">About Us</a></li>
+      <li><a routerLink="/contact-form" (click)="contactForm()">Contact Us</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script src="script.js"></script>

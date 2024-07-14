@@ -1,0 +1,61 @@
+<ion-content fullscreen="true" slot="fixed">
+  <div class="header">
+    <app-header></app-header>
+    <!-- Header content -->
+    <div class="avatar">
+      <img src="https://media.licdn.com/dms/image/D4E03AQEPuEFpai8f4Q/profile-displayphoto-shrink_400_400/0/1677082915350?e=2147483647&v=beta&t=I4ucGuL4uMhjv4BDwp3jDPmLFxOXJeDLh8wEEdgPWG4" alt="">
+    </div>
+    <div class="name-info">Derek Prates</div>
+    <div class="stats">Posts: 3 Groups: 10 Friends: 45</div>
+  </div>
+
+  <div class="chat-container">
+    <div class="card">
+      <!-- Second card -->
+      <div class="card-body">
+        <!-- Card body -->
+        <div class="media-card">
+          <!-- Media card content -->
+          <ion-card-header>
+            <ion-card-title class="custom-card-title-center">Contacts</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card *ngFor="let conversation of conversations" class="conversation-card">
+              <ion-card-header>
+                <ion-card-title>{{ conversation.title }}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-list>
+                  <ion-item *ngFor="let message of conversation.messages" lines="none">
+                    <ion-avatar slot="start">
+                      <img [src]="message.avatar" alt="User Avatar">
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>{{ message.name }}</h2>
+                      <p>{{ message.text }}</p>
+                      <span class="time">{{ message.time }}</span>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+                <div class="see-more-button">
+                  <ion-button size="small" (click)="seeFullConversation(conversation)">See More</ion-button>
+                </div>
+              </ion-card-content>
+            </ion-card>
+            <div class="pagination">
+              <span><</span>
+              <span>1</span>
+              <span>2</span>
+              <span>...</span>
+              <span>10</span>
+              <span>></span>
+            </div>
+          </ion-card-content>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</ion-content>

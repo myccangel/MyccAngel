@@ -1,6 +1,6 @@
 <ion-content fullscreen="true" slot="fixed">
   <div class="header">
-    <app-header headerTitle="Photos"></app-header>
+    <app-header></app-header>
     <!-- Header content -->
     <div class="avatar">
       <img src="https://media.licdn.com/dms/image/D4E03AQEPuEFpai8f4Q/profile-displayphoto-shrink_400_400/0/1677082915350?e=2147483647&v=beta&t=I4ucGuL4uMhjv4BDwp3jDPmLFxOXJeDLh8wEEdgPWG4" alt="">
@@ -22,64 +22,52 @@
     <div class="media-card">
       <!-- Media card content -->
       <ion-card-header>
-        <ion-card-title class="custom-card-title-center">Media Photos</ion-card-title>
+        <ion-card-title class="custom-card-title-center">My Albums</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <!-- Media pictures content -->
-        <div class="media-grid">
-          <!-- Media grid content -->
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 1</div>
+        <!-- Box with all pictures -->
+        <div class="picture-box">
+          <div class="picture" *ngFor="let image of images; let i = index" (click)="changeSlide(i)">
+            <img [src]="image" alt="Thumbnail">
           </div>
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 2</div>
-          </div>
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 3</div>
-          </div>
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 1</div>
-          </div>
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 2</div>
-          </div>
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 3</div>
-          </div>
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 1</div>
-          </div>
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 2</div>
-          </div>
-          <div class="media-item">
-            <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-            <div class="media-name">Name 3</div>
-          </div>
-          <!-- Repeat the above block for each image -->
         </div>
-        <!-- Closing div for media-grid -->
+
+        <div class="card">
+          <!-- Second card -->
+          <div class="card-body">
+            <!-- Card body -->
+            <div class="media-card">
+              <ion-card-content>
+                <!-- Carousel -->
+
+                <div class="carousel-container">
+
+                  <div class="carousel-wrapper">
+
+                    <div class="carousel" [style.transform]="transform">
+                      <div class="carousel-slide" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex">
+                        <img [src]="image" alt="Slide">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-nav-prev">
+                    <button (click)="prevSlide()">&#10094;</button>
+                  </div>
+                  <div class="carousel-nav-next" >
+                    <button (click)="nextSlide()">&#10095;</button>
+                  </div>
+                </div>
+
+              </ion-card-content>
+            </div>
+          </div>
+        </div>
       </ion-card-content>
-      <!-- Closing div for ion-card-content -->
     </div>
-    <!-- Closing div for media-card -->
   </div>
-  <!-- Closing div for card-body -->
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </div>
-<!-- Closing div for card -->
 
-<!-- Closing div for card -->
-<footer>
-  <app-footer></app-footer>
-</footer>
-
-</ion-content>
-<!-- Closing div for ion-content -->

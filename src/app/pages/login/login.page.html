@@ -1,47 +1,94 @@
-<ion-header>
-  <app-header headerTitle="Login"> </app-header>
+<ion-content fullscreen="true">
+  <ion-header>
+    <app-header></app-header>
   </ion-header>
 
-<div class="flex-center">
-  <form [formGroup]="form">
-    <ion-card>
-      <ion-card-content>
-        <ion-card-header class="ion-title">
-          <ion-card-title class="custom-spinner"> Welcome to MyCCAngel</ion-card-title>
-        </ion-card-header>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-img src="https://pbs.twimg.com/media/E1vu04MWYAECE0w.png"></ion-img>
-            </ion-col>
-            <ion-col>
-              <ion-row>
-                <ion-col><ion-button size="full" (click)="login()" [disabled]="!form.valid" (click)="login()" id="loginButton">Login</ion-button></ion-col>
-                <ion-col><ion-button fill="clear" size="full" (click)="register()">Register</ion-button></ion-col>
-              </ion-row>
-              <ion-item>
-                <ion-input formControlName="email" label="Email" labelPlacement="floating"
-                  placeholder="Enter your email" type="email"></ion-input>
-              </ion-item>
-              <app-error-message message="Email is mandatory" [field]="form.get('email')!"
-                error="required"></app-error-message>
-              <app-error-message message="Email is invalid" [field]="form.get('email')!"
-                error="email"></app-error-message>
-              <ion-item>
-                <ion-input formControlName="password" label="Password" labelPlacement="floating"
-                  placeholder="Enter your password" type="password"></ion-input>
-              </ion-item>
-              <app-error-message message="Password is mandatory" [field]="form.get('password')!"
-                error="required"></app-error-message>
-              <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email')?.valid" (click)="forgotEmailPassword()" id="recoverPasswordButton">Forget
-                email/password</ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-  </form>
-</div>
+  <div class="title-welcome">
+    <ion-card-title class="custom-spinner welcome-title">Welcome to MyCCAngel</ion-card-title>
+  </div>
+
+  <ion-grid class="flex-center">
+    <ion-row>
+      <ion-col>
+        <ion-card class="full-card">
+          <ion-card-content>
+            <div class="login-wrap">
+              <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+                <label for="tab-1" class="tab">Login</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up">
+                <label for="tab-2" class="tab">Sign Up</label>
+                <div class="login-form">
+                  <!-- Sign In Form -->
+                  <div class="sign-in-htm">
+                    <form (ngSubmit)="login()" [formGroup]="form">
+                      <div class="group">
+                        <ion-item>
+                          <ion-label position="floating">Email Address</ion-label>
+                          <ion-input formControlName="email" type="email" class="input"></ion-input>
+                        </ion-item>
+                      </div>
+                      <div class="group">
+                        <ion-item>
+                          <ion-label position="floating">Password</ion-label>
+                          <ion-input formControlName="password" type="password" class="input"></ion-input>
+                        </ion-item>
+                      </div>
+                      <div class="group">
+                        <ion-button fill="clear" expand="full" type="submit" class="button" (click)="login()">Login</ion-button>
+                      </div>
+                      <div class="hr"></div>
+                      <div class="foot-lnk">
+                        <ion-button fill="clear" (click)="forgotEmailPassword()" class="link-button">Forgot Password?</ion-button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- Sign Up Form -->
+                  <div class="sign-up-htm">
+                    <form (ngSubmit)="register()" [formGroup]="form">
+                      <div class="group">
+                        <ion-item>
+                          <ion-label position="floating">Name</ion-label>
+                          <ion-input formControlName="name" type="text" class="input"></ion-input>
+                        </ion-item>
+                      </div>
+                      <div class="group">
+                        <ion-item>
+                          <ion-label position="floating">Email Address</ion-label>
+                          <ion-input formControlName="email" type="email" class="input"></ion-input>
+                        </ion-item>
+                      </div>
+                      <div class="group">
+                        <ion-item>
+                          <ion-label position="floating">Password</ion-label>
+                          <ion-input formControlName="password" type="password" class="input"></ion-input>
+                        </ion-item>
+                      </div>
+                      <div class="group">
+                        <ion-item>
+                          <ion-label position="floating">Repeat Password</ion-label>
+                          <ion-input formControlName="repeatPassword" type="password" class="input"></ion-input>
+                        </ion-item>
+                      </div>
+                      <div class="group">
+                        <ion-button fill="clear" expand="full" type="submit" class="button" (click)="register()">Sign Up</ion-button>
+                      </div>
+                      <div class="hr"></div>
+                      <div class="foot-lnk">
+                        <label for="tab-1">Already a Member?</label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   <footer>
     <app-footer></app-footer>
-    </footer>
+  </footer>
+</ion-content>

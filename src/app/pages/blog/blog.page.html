@@ -1,13 +1,55 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>blog</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content fullscreen="true" slot="fixed">
+  <div class="header">
+    <app-header></app-header>
+    <!-- Header content -->
+    <div class="avatar">
+      <img
+        src="https://media.licdn.com/dms/image/D4E03AQEPuEFpai8f4Q/profile-displayphoto-shrink_400_400/0/1677082915350?e=2147483647&v=beta&t=I4ucGuL4uMhjv4BDwp3jDPmLFxOXJeDLh8wEEdgPWG4"
+        alt="">
+    </div>
+    <div class="name-info">Derek Prates</div>
+    <div class="stats">Posts: 3 Groups: 10 Friends: 45</div>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">blog</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="card">
+    <!-- Blog card -->
+    <div class="card-body">
+      <div class="media-card">
+        <ion-card-header>
+          <ion-card-title class="custom-card-title-center">Posts</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+
+          <!-- Blog cards container -->
+          <div class="blog-card-container">
+            <div class="blog-card" *ngFor="let blog of blogs">
+              <img [src]="blog.image" alt="Blog Image" class="blog-image">
+              <div class="blog-text">{{ blog.text }}</div>
+              <div class="spacer"></div>
+              <div class="blog-buttons">
+                <ion-button (click)="uploadImage(blog)">Upload</ion-button>
+                <ion-button (click)="editBlog(blog)">Edit</ion-button>
+              </div>
+            </div>
+          </div>
+
+          <!-- See All button -->
+          <div class="see-all-button">
+            <ion-button size="small" fill="clear" (click)="seeAllBlogs()">See All</ion-button>
+          </div>
+
+        </ion-card-content>
+      </div>
+
+    </div>
+
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button title="Add new post.">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </ion-content>

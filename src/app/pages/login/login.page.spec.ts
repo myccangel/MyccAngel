@@ -35,7 +35,7 @@ describe('LoginPage', () => {
         StoreModule.forRoot([]), // Initialize StoreModule
         StoreModule.forFeature("loading", loadingReducer),
         StoreModule.forFeature("login", loginReducer),
-        AngularFireModule.initializeApp(environment.firebaseConfig)
+       AngularFireModule.initializeApp(environment.firebaseConfig)
       ]
         }).compileComponents();
     fixture = TestBed.createComponent(LoginPage);

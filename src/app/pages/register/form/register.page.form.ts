@@ -15,7 +15,7 @@ export class RegisterPageForm {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(7)]],
-      repeatPassword: [''],
+      repeatPassword: ['', [Validators.required]],
       address: this.formBuilder.group({
         street: ['', [Validators.required]],
         number: ['', [Validators.required]],

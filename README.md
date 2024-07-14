@@ -65,46 +65,65 @@ To get a local copy up and running, follow these steps:
 
 1. **Clone the Repository**:
     ```bash
-    git clone git clone https://github.com/myccangel/MyccAngelWeb.git
+    $ git clone git clone https://github.com/myccangel/MyccAngelWeb.git
     ```
 2. **Push**:
     ```bash
-    cd myccangel
-    git push
+    $ cd myccangel
+    $ git push
     
     ```
 3. **Git logs**:
     ```bash
-    git log
+    $ git log
     
     ```
 4. **Install Dependencies**:
     ```bash
-    npm install
-    npm install ionicons
+    $ npm install
+    $ npm install ionicons
     ```
 
 5. **Run the Development Server**:
     ```bash
-    ionic serve
+    $ ionic serve
     ```
 6. **Create Pages**:
     ```bash
-    ionic g page pages/'page name'
+    $ ionic g page pages/'page name'
     ```    
 7. **Create Components**:
     ```bash
-    ionic g component components/'component name'
+    $ ionic g component components/'component name'
     ```   
     ```    
 8. **Install ngrx**:
     ```bash
-    npm install @ngrx/store --save
-    npm install @ngrx/store-devtools --save
+    $ npm install @ngrx/store --save
+    $ npm install @ngrx/store-devtools --save
     ```   
     ```    
 7. **Create Components**:
     ```bash
-    ionic g component components/'component name'
+    $ ionic g component components/'component name'
     ```   
+8. **Install firebase**:
+    ```bash
+    $ npm install @angular/fire firebase
+    $ npm install @angular/fire firebase @ngrx/store-devtools
 
+    ```   
+9. **Create nest server**:
+    ```bash
+    $ npm i -g @nestjs/cli
+    $ nest new project-name
+    ```   
+10. **Create resource**:
+    ```bash
+    $ nest g resource place/name
+    ```   
+10. **Install class validator/transformer**:
+    ```bash
+    $ npm i class-validator
+    $ npm i class-transformer
+    ```   

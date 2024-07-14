@@ -3,7 +3,7 @@
 <ion-content fullscreen="true" slot="fixed">
 
   <div class="header">
- <app-header headerTitle="Profile"></app-header>
+ <app-header></app-header>
 
     <!-- Header content -->
     <div class="avatar">
@@ -75,6 +75,8 @@
 
               <!-- Closing div for years -->
             </div>
+            <ion-button expand="full" fill="clear" slot="end" routerLink="/blog">See More...</ion-button>
+
             <!-- Closing div for user-meta -->
           </ion-card-content>
         </ion-card>
@@ -97,7 +99,7 @@
                 <h2>John Doe</h2>
                 <p>(123) 456-7890</p>
               </ion-label>
-              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message" routerLink="/connections"></app-buttons>
               <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
             </ion-item>
             <ion-item>
@@ -108,7 +110,7 @@
                 <h2>John Doe</h2>
                 <p>(123) 456-7890</p>
               </ion-label>
-              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message" routerLink="/connections"></app-buttons>
               <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
             </ion-item>
             <ion-item>
@@ -119,7 +121,7 @@
                 <h2>John Doe</h2>
                 <p>(123) 456-7890</p>
               </ion-label>
-              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message" routerLink="/connections"></app-buttons>
               <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
             </ion-item>
             <ion-item>
@@ -130,7 +132,7 @@
                 <h2>John Doe</h2>
                 <p>(123) 456-7890</p>
               </ion-label>
-              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message" routerLink="/connections"></app-buttons>
               <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
             </ion-item>
             <ion-item>
@@ -141,7 +143,7 @@
                 <h2>John Doe</h2>
                 <p>(123) 456-7890</p>
               </ion-label>
-              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message" routerLink="/connections"></app-buttons>
               <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
             </ion-item>
             <ion-item>
@@ -152,10 +154,10 @@
                 <h2>John Doe</h2>
                 <p>(123) 456-7890</p>
               </ion-label>
-              <app-buttons color="primary" icon="chatbubble-outline" label="Message"></app-buttons>
+              <app-buttons color="primary" icon="chatbubble-outline" label="Message" routerLink="/connections"></app-buttons>
               <app-buttons color="danger" icon="remove-circle-outline" label="Unfollow"></app-buttons>
             </ion-item>
-            <!-- More items -->
+            <ion-button class= "moreButton" expand="full" fill="clear" slot="end" routerLink="/connections">See More...</ion-button>
           </ion-card-content>
         </ion-card>
         <!-- Closing div for user-meta-card -->
@@ -184,6 +186,7 @@
           <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
           <!-- More images -->
         </div>
+        <ion-button expand="default" fill="clear"  slot="end" routerLink="/photo">See More...</ion-button>
         <!-- Closing div for media-grid -->
       </ion-card-content>
       <!-- Closing div for ion-card-content -->
@@ -227,6 +230,7 @@
         </ion-item>
       </ion-list>
       <!-- Closing div for ion-list -->
+      <ion-button expand="default" fill="clear" slot="end" routerLink="/chat">See More...</ion-button>
     </ion-card-content>
     <!-- Closing div for ion-card-content -->
   </div>

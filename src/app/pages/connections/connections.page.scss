@@ -145,6 +145,21 @@ ion-chip {
   margin: 0 auto; /* Center horizontally */
   display: block; /* Ensure block-level for centering */
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.pagination span {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination span:hover {
+  text-decoration: underline;
+}
 
 
 /* Contact List Styles */

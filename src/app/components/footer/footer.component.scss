@@ -1,9 +1,64 @@
-/* Footer Link Styles */
-.footer-link {
-  font-size: 14px; /* Smaller font size */
-  color: #B95CF4; /* Purple color */
+/* Footer Styles */
+ion-footer {
+  background-color: #f7f7f7 !important;
 }
 
-.footer-link .icon-label {
-  margin: 0; /* No margin for icons */
+.footer-nav {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  position: relative;
+}
+
+.footer-link {
+  font-size: 14px !important;
+  color: #B95CF4 !important;
+  margin: 5px 15px !important;
+  text-decoration: none !important;
+
+}
+
+.footer-link:hover {
+  text-decoration: underline !important;
+}
+
+.footer-socials {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 10px !important; /* Space between social buttons */
+}
+
+.footer-socials ion-button {
+  padding: 0 !important;
+  --border-radius: 50% !important;
+}
+
+.footer-socials ion-icon {
+  font-size: 24px !important;
+  color: #B95CF4 !important;
+}
+
+.footer-socials ion-button:hover ion-icon {
+  color: #5a2d91 !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .footer-nav {
+    display: none !important; /* Hide navigation links */
+  }
+
+  .footer-socials {
+    flex-direction: row !important; /* Ensure social icons are in a row */
+    justify-content: center !important; /* Center align social icons */
+    padding: 0 10px; /* Padding to ensure content doesn't touch the edges */
+  }
+
+  .footer-socials ion-button {
+    height: 40px !important; /* Ensure social buttons are easy to interact with */
+  }
+
+  .footer-socials ion-icon {
+    font-size: 20px !important; /* Adjust icon size for smaller screens */
+  }
 }

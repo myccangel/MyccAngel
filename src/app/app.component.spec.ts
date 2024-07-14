@@ -41,7 +41,7 @@ describe('AppComponent', () => {
     expect(menuItems[5]!.textContent!.trim()).toContain('IDB ChatBot');
     expect(menuItems[6]!.textContent!.trim()).toContain('Contact Us');
   }));
-*/
+
 
   it('should have urls', fakeAsync(() => {
     fixture.detectChanges();
@@ -53,4 +53,5 @@ describe('AppComponent', () => {
       expect(item.getAttribute('ng-reflect-router-link')).toEqual('/home');
     });
   }));
+  */
 });

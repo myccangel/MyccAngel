@@ -1,19 +1,22 @@
-<!-- src/app/components/swiper-card/swiper-card.component.html -->
-
 <div class="image-container">
-  <ion-card>
-    <ion-card-content>
-      <swiper-container class="custom-swiper" [pagination]="true" navigation="true">
-        <swiper-slide>
-          <img src="https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg" alt="Slide 1">
-        </swiper-slide>
-        <swiper-slide>
-          <img src="https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg" alt="Slide 2">
-        </swiper-slide>
-        <swiper-slide>
-          <img src="https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg" alt="Slide 3">
-        </swiper-slide>
-      </swiper-container>
-    </ion-card-content>
-  </ion-card>
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide" *ngFor="let image of images">
+        <img [src]="image" alt="Slide">
+      </div>
+    </div>
+    <!-- Custom pagination dots -->
+    <div class="dots">
+      <span *ngFor="let dot of images; let i = index"
+        class="dot"
+        [class.active]="i === currentSlideIndex"
+        (click)="goToSlide(i)">
+      </span>
+    </div>
+    <!-- Custom navigation buttons -->
+    <div class="swiper-buttons">
+      <button class="swiper-button-prev" (click)="previousSlide()">&#10094;</button>
+      <button class="swiper-button-next" (click)="nextSlide()">&#10095;</button>
+    </div>
+  </div>
 </div>

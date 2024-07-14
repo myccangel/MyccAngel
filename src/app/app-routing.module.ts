@@ -69,7 +69,35 @@ export const routes: Routes = [
     path: 'blog',
     loadChildren: () => import('./pages/blog/blog.module').then( m => m.BlogPageModule),
     canActivate: [AuthGuard]
+  },  {
+    path: 'partner',
+    loadChildren: () => import('./pages/partner/partner.module').then( m => m.PartnerPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'contact-form',
+    loadChildren: () => import('./pages/contact-form/contact-form.module').then( m => m.ContactFormPageModule)
+  },
+  {
+    path: 'about-ibd',
+    loadChildren: () => import('./pages/about-ibd/about-ibd.module').then( m => m.AboutIbdPageModule)
+  },
+  {
+    path: 'ai-help',
+    loadChildren: () => import('./pages/ai-help/ai-help.module').then( m => m.AiHelpPageModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
+  },
+  {
+    path: 'resources',
+    loadChildren: () => import('./pages/resources/resources.module').then( m => m.ResourcesPageModule)
   }
+
 
 ];
 

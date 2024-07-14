@@ -17,10 +17,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
     IonicModule,
     LoginPageRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+
   ],
   declarations: [
-    LoginPage
+    LoginPage,
+    
 
   ]
 })

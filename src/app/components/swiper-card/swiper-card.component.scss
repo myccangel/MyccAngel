@@ -1,19 +1,104 @@
 .image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 85vh; /* Define a fixed height for the carousel container */
+
+  @media (max-width: 600px) {
+    height: 30vh; /* Smaller height on small screens */
+  }
 }
 
-.swiperSlide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.carousel {
+  position: relative;
+  height: 100%; /* The carousel will take up the full height of the container */
 }
 
-.swiperSlide img {
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%; /* Ensures that each slide occupies the full height of the carousel */
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  height: 100%; /* Ensures that each slide occupies the full height of the carousel */
+}
+
+.slide img {
   width: 100%;
-  height: auto;
-  max-width: 500px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  @media (max-width: 600px) {
+    height: auto; /* Adjust image height to auto on small screens */
+
+  }
+}
+
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    bottom: 15px; /* Adjust position on small screens */
+
+  }
+}
+
+.dot {
+  display: inline-block;
+  background-color: rgba(128, 0, 128, 0.6); /* Semi-transparent purple */
+  border-radius: 50%;
+  width: 12px; /* Slightly larger for better visibility */
+  height: 12px; /* Slightly larger for better visibility */
+  margin: 0 5px;
+  cursor: pointer;
+
+  @media (max-width: 600px) {
+    width: 8px; /* Smaller dot size on small screens */
+    height: 8px; /* Smaller dot size on small screens */
+    margin: 0 3px; /* Adjust margin on small screens */
+  }
+}
+
+.dot.active {
+  background-color: rgba(128, 0, 128, 0.8); /* Slightly more opaque for active dot */
+}
+
+.swiper-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+
+  @media (max-width: 600px) {
+    top: 45%; /* Adjust position on small screens */
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(128, 0, 128, 0.3); /* More transparent purple */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%; /* Optional: make the buttons round */
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+
+  @media (max-width: 600px) {
+    padding: 5px; /* Smaller button size on small screens */
+  }
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(128, 0, 128, 0.5); /* Slightly less transparent on hover */
 }

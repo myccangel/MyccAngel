@@ -1,35 +1,103 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
+  <ion-split-pane contentId="main-content" when="(min-width: 2000px)">
     <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button menuClose>
+              <ion-icon name="close" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-title>MyccAngel</ion-title>
+        </ion-toolbar>
+      </ion-header>
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header>MyccAngel</ion-list-header>
           <ion-note>MyccAngel web</ion-note>
 
-          <!-- Adicione itens aqui -->
           <ion-item routerLink="/home">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="Home">
+            </ion-avatar>
+            <ion-label>Home</ion-label>
+          </ion-item>
+
+          <ion-item routerLink="/about-us">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="About Us">
+            </ion-avatar>
             <ion-label>About Us</ion-label>
           </ion-item>
-          <ion-item routerLink="/home">
-            <ion-label>About IDB</ion-label>
+
+          <ion-item routerLink="/about-ibd">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="About IBD">
+            </ion-avatar>
+            <ion-label>About IBD</ion-label>
           </ion-item>
-          <ion-item routerLink="/home">
+
+          <ion-item routerLink="/doctors">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="Doctors">
+            </ion-avatar>
             <ion-label>Doctors</ion-label>
           </ion-item>
-          <ion-item routerLink="/home">
-            <ion-label>Dietition</ion-label>
+
+          <ion-item routerLink="/dietitian">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="Dietitian">
+            </ion-avatar>
+            <ion-label>Dietitian</ion-label>
           </ion-item>
-          <ion-item routerLink="/home">
-            <ion-label>Donate</ion-label>
+
+          <ion-item routerLink="/ai-help">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="AI Help">
+            </ion-avatar>
+            <ion-label>AI Help</ion-label>
           </ion-item>
-          <ion-item routerLink="/home">
-            <ion-label>IDB ChatBot</ion-label>
+
+          <ion-item routerLink="/resources">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="Resources">
+            </ion-avatar>
+            <ion-label>Resources</ion-label>
           </ion-item>
-          <ion-item routerLink="/home">
+
+          <ion-item routerLink="/contact-us">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="Contact Us">
+            </ion-avatar>
             <ion-label>Contact Us</ion-label>
           </ion-item>
         </ion-list>
       </ion-content>
+
+      <ion-footer>
+        <ion-list>
+          <ion-item routerLink="/consult-doctor">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="Consult a Doctor">
+            </ion-avatar>
+            <ion-label>Consult a Doctor</ion-label>
+          </ion-item>
+
+          <ion-item routerLink="/blog">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="Blog">
+            </ion-avatar>
+            <ion-label>Blog</ion-label>
+          </ion-item>
+
+          <ion-item routerLink="/download-app">
+            <ion-avatar slot="start">
+              <img src="https://pbs.twimg.com/profile_images/898437375591718912/w31X-hK8_400x400.jpg" alt="Download App">
+            </ion-avatar>
+            <ion-label>Download App</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-footer>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>

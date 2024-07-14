@@ -1,105 +1,171 @@
-<ion-header>
-<app-header headerTitle="Make IBD people's lives better everywhere "></app-header>
-</ion-header>
+<ion-content fullscreen="true" slot="fixed">
 
-<ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        <ion-button color="light" class="custom-button early-diagnosis-button ion-text-left" style="flex: 1; text-align: left;">
-          Diagnosis
-        </ion-button>
-        <ion-button color="light" class="custom-button ion-text-center" style="flex: 1; text-align: center;">
-          Appointment
-        </ion-button>
-        <ion-button color="light" class="custom-button ion-text-right" style="flex: 1; text-align: right;">
-          Treatment
-        </ion-button>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-header>
+    <app-header></app-header>
 
-  <div class="image-container">
-    <app-swiper-card></app-swiper-card>
+    <div class="image-container">
+      <app-swiper-card></app-swiper-card>
+    </div>
+
+    <!-- Category Selector -->
+    <div class="category-selector">
+
+      <div class="selector-label">
+        <ion-icon name="search-outline" class="search-icon"></ion-icon>
+        <span>SELECT CONCERN:</span>
+      </div>
+      <div class="selector-buttons">
+        <button class="category-button" (click)="changeCategory($event, 'Abdominal Pain & Cramping')">
+          <img src="../../../assets/icon/ConcernsPics/abdominalPain.png" alt="Abdominal Pain & Cramping" class="button-image">
+          Abdominal Pain & Cramping
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Blood and/or Mucus in stool')">
+          <img src="../../../assets/icon/ConcernsPics/bloodStool.png" alt="Blood and/or Mucus in stool" class="button-image">
+          Blood and/or Mucus in stool
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Fatigue and Weakness')">
+          <img src="../../../assets/icon/ConcernsPics/fatigue.png" alt="Fatigue and Weakness" class="button-image">
+          Fatigue and Weakness
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Diarrhea')">
+          <img src="../../../assets/icon/ConcernsPics/diarrhea.png" alt="Diarrhea" class="button-image">
+          Diarrhea
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Constipation')">
+          <img src="../../../assets/icon/ConcernsPics/constipation.png" alt="Constipation" class="button-image">
+          Constipation
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Weight loss and malnutrition')">
+          <img src="../../../assets/icon/ConcernsPics/weightLoss.png" alt="Weight loss and malnutrition" class="button-image">
+          Weight loss and malnutrition
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Loss of appetite')">
+          <img src="../../../assets/icon/ConcernsPics/apetiteLoss.png" alt="Loss of appetite" class="button-image">
+          Loss of appetite
+        </button>
+
+        <button class="category-button" (click)="changeCategory($event, 'Nausea and vomiting')">
+          <img src="../../../assets/icon/ConcernsPics/vomitting.png" alt="Nausea and vomiting" class="button-image">
+          Nausea and vomiting
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Rectal pain and pressure')">
+          <img src="../../../assets/icon/ConcernsPics/rectalPain.png" alt="Rectal pain and pressure" class="button-image">
+          Rectal pain and pressure
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Anemia')">
+          <img src="../../../assets/icon/ConcernsPics/fatigue.png" alt="Anemia" class="button-image">
+          Anemia
+        </button>
+        <button class="category-button" (click)="changeCategory($event, 'Joint pain and arthritis')">
+          <img src="../../../assets/icon/ConcernsPics/jointPain.png" alt="Joint pain and arthritis" class="button-image">
+          Joint pain and arthritis
+        </button>
+      </div>
+    </div>
+  </ion-header>
+
+  <div class="card">
+    <!-- Second card -->
+    <div class="card-body">
+      <!-- Card body -->
+      <div class="partner-card">
+        <!-- partner card content -->
+
+        <ion-card-content>
+
+            <!-- Long Card Section -->
+  <div class="long-card">
+    <img src="../../../assets/images/logo.png" alt="@alexjohnson" class="card-img">
+    <div class="long-card-content">
+      <ion-card-header>
+        <ion-card-title class="custom-card-title-center">Clinical Trials Community</ion-card-title>
+      </ion-card-header>
+      <div class="long-card-text">
+        <p>Many people with IBD are unaware that clinical trials are an option. Through clinical trials, researchers find new ways to improve treatments and quality of life. Visit our Clinical Trials Community to learn more.</p>
+        <ion-button fill="outline" class="learn-more-button">Learn More</ion-button>
+      </div>
+    </div>
   </div>
 
-  <div class="main-container">
-    <!-- Card e calendário -->
-    <div class="card-calendar-container">
-      <!-- Card -->
-      <ion-card class="left-card">
-        <div class="card">
-          <!-- Second card -->
-          <div class="card-body">
-            <!-- Card body -->
-            <div class="partner-card">
-              <!-- partner card content -->
-              <ion-card-header>
-                <ion-card-title class="custom-card-title-center">Our Partners</ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <!-- partner pictures content -->
-                <div class="partner-grid">
-                  <!-- partner grid content -->
-                  <div class="partner-item">
-                    <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-                    <div class="partner-name">Partner 1</div>
-                  </div>
-                  <div class="partner-item">
-                    <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-                    <div class="partner-name">Partner 2</div>
-                  </div>
-                  <div class="partner-item">
-                    <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwVOS93n1kWPcg2qOQK_HNAUHbFHQVUD2uQ&s"></ion-img>
-                    <div class="partner-name">Partner 3</div>
-                  </div>
-                  <!-- Repeat the above block for each image -->
-                </div>
-                <!-- Closing div for partner-grid -->
-              </ion-card-content>
-              <!-- Closing div for ion-card-content -->
-            </div>
-            <!-- Closing div for partner-card -->
-          </div>
-          <!-- Closing div for card-body -->
-        </div>
-      </ion-card>
-      <!-- Calendário e eventos -->
-      <div class="right-container">
-        <!-- Calendário -->
-        <div class="calendar-container">
-          <ion-title class="ion-text-center">Coming Events</ion-title>
-          <ion-datetime
-            presentation="date"
-            value="2024-06-01"
-            min="2024-06-01"
-            max="2030-12-31"
-            (ionChange)="onDateChange($event)"
-          ></ion-datetime>
-        </div>
+  <div class="long-card">
+    <img src="../../../assets/images/logo.png" alt="@alexjohnson" class="card-img">
+    <div class="long-card-content">
+      <ion-card-header>
+        <ion-card-title class="custom-card-title-center">MyIBD Learning Education Programs</ion-card-title>
+      </ion-card-header>
+      <div class="long-card-text">
+        <p>Throughout 2024, the Crohn's & Colitis Foundation is hosting virtual, in-person, and on demand MyIBD Learning education programs. Each program is created for patients and caregivers of all ages—wherever they are in their patient journey.</p>
+        <ion-button fill="outline" class="learn-more-button">Find Programs</ion-button>
+      </div>
+    </div>
+  </div>
 
-        <!-- Event -->
-        <div class="events-list">
-          <ion-list>
-            <ion-item *ngFor="let event of events">
-              <ion-label>
-                <h2>{{ event.title }}</h2>
-                <p>{{ event.date }}</p>
-              </ion-label>
-            </ion-item>
-          </ion-list>
+
+        </ion-card-content>
+        <!-- Closing div for ion-card-content -->
+      </div>
+      <!-- Closing div for partner-card -->
+    </div>
+    <!-- Closing div for card-body -->
+  </div>
+    <!-- Card Container -->
+    <div class="card">
+      <div class="card-body">
+
+        <div class="card-container-partner">
+          <ion-card-header>
+            <ion-card-title class="custom-card-title-center">Our Partners</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="card-container-partner">
+
+
+              <div class="square-card">
+                <div class="card-text">
+                  <img src="../../../assets/images/logo_1.png">
+                </div>
+              </div>
+
+              <div class="square-card">
+                <div class="card-text">
+                  <img src="../../../assets/images/logo_1.png">
+                </div>
+              </div>
+
+              <div class="square-card">
+                <div class="card-text">
+                  <img src="../../../assets/images/logo_1.png">
+                </div>
+
+              </div>
+              <div class="square-card">
+                <div class="card-text">
+                  <img src="../../../assets/images/logo_1.png">
+                </div>
+
+              </div>
+              <div class="square-card">
+                <div class="card-text">
+                  <img src="../../../assets/images/logo_1.png">
+                </div>
+
+              </div>
+
+            </div>
+          </ion-card-content>
         </div>
-      </div> <!-- Fechamento da div right-container -->
-    </div> <!-- Fechamento da div card-calendar-container -->
-  </div> <!-- Fechamento da div main-container -->
+      </div>
+    </div>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button title="Press to start a conversation.">
-      <ion-icon name="add" ></ion-icon>
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-</ion-content>
 
-<footer>
-<app-footer></app-footer>
-</footer>
+
+
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</ion-content>
