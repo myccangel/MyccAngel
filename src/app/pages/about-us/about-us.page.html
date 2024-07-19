@@ -2,9 +2,11 @@
   <div class="header">
     <app-header></app-header>
     <div class="image-container">
-      <app-swiper-card></app-swiper-card>
     </div>
   </div>
+
+  <app-cover-picture [imageUrl]="'../../../assets/images/about-us.jpg'" [altText]="'about-us-cover'"></app-cover-picture>
+
 
   <!-- Donation Button -->
   <button id="donationButton" [ngClass]="{'donation-button': true, 'visible': donationButtonVisible}">Donate</button>

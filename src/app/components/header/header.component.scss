@@ -1,6 +1,7 @@
 .hidden-menu ion-content {
   display: none !important;
 }
+
 ion-menu-button {
   display: none; /* Hide the menu button by default */
 }
@@ -9,11 +10,21 @@ ion-menu-button {
 .image-container ion-img {
   max-width: 100%; /* Max width of image */
   max-height: 100%; /* Auto-adjust height */
+
 }
 
-.responsive-buttons{
+.responsive-buttons {
   padding-right: 50px;
-  margin-top: -30px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
 }
 
 ion-toolbar {
@@ -23,7 +34,7 @@ ion-toolbar {
 }
 
 ion-title {
-  color: #B95CF4; /* Purple color */
+  color: #513894; /* Purple color */
 }
 
 ion-fab-button {
@@ -60,41 +71,31 @@ ion-fab-button:hover::before {
   z-index: 1000;
 }
 
-.login-button {
+.login-button, .signIn-button {
   --background: #B95CF4;
   --padding-start: 15px;
   --padding-end: 15px;
   --padding-top: 8px;
   --padding-bottom: 8px;
   color: #fff; /* Text color white */
-  margin: 8px; /* Adds some space between buttons */
-}
-
-.signIn-button {
-  --background: #B95CF4;
-  --padding-start: 10px;
-  --padding-end: 10px;
-  --padding-top: 8px;
-  --padding-bottom: 8px;
-  color: #fff; /* Text color white */
-  margin: 8px; /* Adds some space between buttons */
+  margin: 5px; /* Adds some space between buttons */
+  --border-radius: 55px; /* Ensures the buttons are rounded */
 }
 
 .round-button-donation {
   --background: #18d230;
   --border-radius: 55px; /* Ensures the buttons are rounded */
-  --padding-start: 55px;
-  --padding-end:  50px;
+  --padding-start: calc(15px * 2 + 31px); /* Combined width of login and sign-in button */
+  --padding-end:  calc(15px * 2 + 31px); /* Combined width of login and sign-in button */
   --padding-top: 8px;
   --padding-bottom: 8px;
   color: #fff; /* Text color white */
-  margin: 4px; /* Adds some space between buttons */
+  margin: 8px; /* Adds some space between buttons */
 }
 
-.donation-button{
-  margin-left: 1400px;
-  padding-bottom: 30px;
-  margin-top: -40px;
+.donation-button {
+  margin: 0; /* Align with login and sign-in buttons */
+  padding: 8px 0 0 0; /* Adds space between login/sign-in and donation button */
 }
 
 .responsive-toolbar {
@@ -103,15 +104,16 @@ ion-fab-button:hover::before {
 
 .responsive-toolbar .header-logo {
   width: 300px;
-  margin-top: 30px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+
 }
-
-
 
 @media (max-width: 768px) {
   .desktop-title {
     display: none;
   }
+
   ion-menu-button {
     display: inline-block; /* Show the menu button on mobile devices */
   }
@@ -137,12 +139,16 @@ ion-fab-button:hover::before {
 
   .responsive-buttons {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
     align-items: flex-end;
+  }
+
+  .buttons-container {
+    flex-direction: row; /* Ensure login and sign-up buttons are side by side on smaller screens */
   }
 }
 
-/* Specific Styles for the Back Button  */
+/* Specific Styles for the Back Button */
 ion-back-button {
   color: #B95CF4;
   --background: transparent;
@@ -208,13 +214,12 @@ ion-back-button {
 
 .desktop-title {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 45%;
   font-size: 32px;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-
 }
 
 .word {
@@ -228,6 +233,7 @@ ion-back-button {
 .slide-out {
   animation: slideOut 1s forwards;
 }
+
 /* Vertical Button Styles */
 .vertical-button {
   position: fixed;
@@ -247,4 +253,143 @@ ion-back-button {
 /* Mostrar o botão quando a classe .show for adicionada */
 .vertical-button.show {
   opacity: 0 !important;
+}
+
+
+@media (max-width: 768px) {
+  .hidden-menu ion-content {
+    display: none !important;
+  }
+
+  ion-menu-button {
+    display: none !important; /* Hide the menu button on mobile devices */
+  }
+
+  /* Adjust Image Container for Mobile */
+  .image-container ion-img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  /* Responsive Buttons for Mobile */
+  .responsive-buttons {
+    display: none !important; /* Hide buttons on mobile devices */
+  }
+
+  ion-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ion-title {
+    color: #513894;
+  }
+
+  ion-fab-button {
+    --background: #B95CF4;
+    position: relative;
+    color: #fff;
+  }
+
+  ion-fab-button:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 1px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 12px; /* Adjusted font size for mobile */
+    z-index: 1000;
+  }
+
+  ion-fab-button:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    z-index: 1000;
+  }
+
+  .login-button, .signIn-button {
+    display: none !important; /* Hide login and sign-in buttons on mobile devices */
+  }
+
+  .round-button-donation {
+    display: none !important; /* Hide donation button on mobile devices */
+  }
+
+  .responsive-toolbar {
+    height: 80px; /* Adjust height for mobile */
+  }
+
+  .responsive-toolbar .header-logo {
+    width: 100px; /* Adjust width for mobile */
+    margin-top: 0; /* Adjust margin for mobile */
+    padding-bottom: 10px; /* Adjust padding for mobile */
+  }
+
+  .desktop-title {
+    display: none;
+  }
+
+  .menu-container {
+    display: none !important; /* Hide menu on mobile devices */
+    width: 100% !important;
+  }
+
+  .menu-selector {
+    display: none !important; /* Hide menu on mobile devices */
+    justify-content: center !important;
+    background-color: #f5f5f5 !important;
+    padding: 5px 0 !important; /* Adjust padding for mobile */
+  }
+
+  .menu-selector ul {
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .menu-selector li {
+    margin: 0 10px !important; /* Adjust margin for mobile */
+  }
+
+  .menu-selector a {
+    text-decoration: none !important;
+    color: #333 !important;
+    font-weight: bold !important;
+    font-size: 16px !important; /* Adjust font size for mobile */
+  }
+
+  .menu-selector a:hover {
+    color: purple !important;
+  }
+
+  /* Specific Styles for the Back Button */
+  ion-back-button {
+    color: #B95CF4;
+    --background: transparent;
+  }
+
+  /* Vertical Button Styles for Mobile */
+  .vertical-button {
+    left: -20px; /* Adjust position for mobile */
+    font-size: 14px; /* Adjust font size for mobile */
+    padding: 5px 10px; /* Adjust padding for mobile */
+  }
+
+  .vertical-button.show {
+    opacity: 0 !important;
+  }
 }

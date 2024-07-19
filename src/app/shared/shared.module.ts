@@ -8,6 +8,7 @@ import { SwiperCardComponent } from '../components/swiper-card/swiper-card.compo
 import { HeaderComponent } from '../components/header/header.component';
 import { ButtonsComponent } from '../components/buttons/buttons.component';
 import { ErrorMessageComponent } from '../components/error-message/error-message.component';
+import { CoverPictureComponent } from '../components/cover-picture/cover-picture.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ErrorMessageComponent } from '../components/error-message/error-message
     SwiperCardComponent,
     HeaderComponent,
     ButtonsComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    CoverPictureComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { ErrorMessageComponent } from '../components/error-message/error-message
     SwiperCardComponent,
     HeaderComponent,
     ButtonsComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    CoverPictureComponent
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

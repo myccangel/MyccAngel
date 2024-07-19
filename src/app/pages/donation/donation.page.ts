@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonationPage implements OnInit {
 
+  activeTab: string = 'monthly';
+  activeStep: string = 'step1-content';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  showTab(tabId: string) {
+    this.activeTab = tabId;
+  }
+
+  showStep(stepId: string) {
+    this.activeStep = stepId;
+  }
 }

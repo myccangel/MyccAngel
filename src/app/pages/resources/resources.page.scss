@@ -1,0 +1,141 @@
+/* Container Styles for the Page */
+.resource-page-container {
+  padding: 20px !important;
+}
+.resources-section {
+  margin: 40px;
+  padding: 40px;
+  border: 5px solid #B95CF4;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #303940;
+  text-align: justify;
+  font-size: 30px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important; /* Space between cards */
+  justify-content: center !important; /* Center align cards */
+}
+
+.resources-section h2 {
+  margin-bottom: 20px;
+  color: #B95CF4;
+  font-size: 38px;
+  font-weight: bolder;
+  width: 100%;
+}
+/* Cover Picture Styles */
+.cover {
+  padding-top: 20px;
+}
+
+/* Page Title Styles */
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px; /* Space below title */
+  font-weight: bold;
+}
+
+
+/* Individual Card Styles */
+.square-card {
+  width: 30% !important; /* Width to fit 3 cards per row */
+  padding: 10px !important;
+  border: 2px solid purple !important; /* Border color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 10px !important; /* Rounded corners */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* Center align content */
+  cursor: pointer; /* Indicate that cards are clickable */
+  height: 250px !important; /* Set a fixed height for the cards */
+  position: relative; /* Needed for absolute positioning of description */
+}
+
+/* Card Content Styles */
+.card-content {
+  flex: 1; /* Grow to fill the available space */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative; /* Relative positioning for description */
+}
+.card {
+  margin-top: -20px;
+  width: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 50px 70px;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Description Background Styles */
+.card-text {
+  position: absolute; /* Absolute positioning for description */
+  bottom: -10px; /* Position description at the bottom */
+  background-color: purple; /* Background color for description */
+  color: white; /* Text color */
+  padding: 10px; /* Padding around text */
+  border-radius: 0 0 10px 10px; /* Rounded corners at bottom */
+  width: 160%; /* Full width */
+  box-sizing: border-box; /* Ensure padding does not affect width */
+  text-align: center; /* Center align text */
+  font-size: 14px; /* Set font size for text */
+
+
+}
+
+.card-content img {
+  max-width: 100% !important;
+  max-height: 100px !important; /* Adjust image height */
+  object-fit: fill !important; /* Ensure image fits inside card */
+  margin-bottom: 10px !important; /* Space between image and text */
+}
+
+
+@media (max-width: 768px) {
+  /* Container Styles for Mobile */
+  .resource-page-container {
+    padding: 10px !important;
+  }
+
+  .resources-section {
+    margin: 20px;
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .resources-section h2 {
+    font-size: 28px;
+  }
+
+  /* Individual Card Styles for Mobile */
+  .square-card {
+    width: 100% !important; /* Full width for cards on mobile */
+    padding: 5px !important;
+    height: auto !important; /* Auto height for cards on mobile */
+  }
+
+  /* Card Content Styles for Mobile */
+  .card-content img {
+    max-height: 70px !important; /* Smaller image height on mobile */
+    margin-bottom: 5px !important; /* Reduced space between image and text */
+  }
+
+  /* Description Background Styles for Mobile */
+  .card-text {
+    bottom: 0; /* Position description at the bottom */
+    padding: 5px !important; /* Reduced padding around text */
+    font-size: 12px !important; /* Smaller font size for text */
+  }
+}

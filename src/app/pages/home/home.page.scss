@@ -3,11 +3,12 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
   height: 100% !important;
-  overflow-x: hidden !important; /* Prevent horizontal scrolling */
 }
-.ion-text-center{
-  display: block;
+
+ion-content {
+  overflow: auto; /* Ensure scroll is enabled */
 }
+
 .main-container {
   display: flex !important;
   flex-direction: column !important;
@@ -19,7 +20,6 @@ html, body {
 footer {
   margin-top: auto !important; /* Push footer to the bottom of the container */
 }
-
 
 /* Image Styles */
 .image-container ion-img {
@@ -38,56 +38,59 @@ ion-title {
   text-align: center !important; /* Center align */
   font-size: 30px;
   font-weight: bold;
+  padding-bottom: 20px;
+  padding-top: -30px;
 }
 
 /* Category Selector Styles */
 .category-selector {
+  height: 400px;
   margin-top: 20px !important; /* Add top margin */
   display: flex !important;
-  flex-direction: row !important;
+  flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 10px 20px !important;
+  padding: 0px 30px 30px 30px !important;
+  align-content: center;
 }
 
 .selector-label {
   display: flex !important;
   align-items: center !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 20px !important;
 }
 
 .selector-label span {
-  font-weight: bold !important;
+  font-weight: bolder !important;
   color: purple !important;
-  margin-left: 5px !important;
+  font-size: 25px;
+  padding-bottom: 20px;
 }
 
 .selector-buttons {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important; /* 4 buttons per row */
-  gap: 15px 30px !important; /* Space between buttons */
+  gap: 30px 30px !important; /* Space between buttons */
   justify-items: center !important;
   width: 95% !important;
+  align-items: center;
 }
-
-
 
 .category-button {
   background-color: white !important;
   border: 2px solid purple !important;
   border-radius: 10px !important;
-  padding: 10px 5px !important;
+  padding: 10px 10px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important; /* Align items to the center vertically */
   text-align: center !important; /* Align text to the center */
   position: relative !important;
-  font-size: 20px !important; /* Adjust font size if needed */
+  font-size: 17px !important; /* Adjust font size if needed */
   box-sizing: border-box !important;
   font-weight: bold;
   width: 100%; /* Take full width of the grid cell */
 }
-
 
 .category-button img {
   width: 40px !important;
@@ -118,11 +121,25 @@ ion-title {
 }
 
 /* Card Container Styles */
+.card {
+  width: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px 50px 20px 50px;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
 .card-container-partner {
   display: flex !important;
   justify-content: space-around !important;
   flex-wrap: wrap !important;
-  padding: 20px !important;
+  padding: 10px !important;
 }
 
 .square-card {
@@ -151,61 +168,19 @@ ion-title {
   color: #666 !important;
 }
 
-.footer-img {
-  width: 50px !important;
-  height: 50px !important;
-  border-radius: 50% !important;
-  margin-right: 10px !important;
-}
-
-.footer-info p {
-
-  align-content: center !important;
-  font-size: 16px !important;
-  color: #333 !important;
-}
-
-.footer-info p:first-child {
-  font-weight: bold !important;
-}
-
-/* Card Text Styles */
-.card-text p {
-  margin: 0 !important;
-  color: #333 !important;
-}
-
-/* Fab Button Styles */
-ion-fab-button {
-  --background: purple !important;
-}
-
-ion-fab-button ion-icon {
-  font-size: 24px !important;
-}
-
-
-/* Search Icon Styles */
-.search-icon {
-  font-size: 18px !important;
-  color: purple !important;
-}
-
-/* Long card */
-/* Long card */
+/* Long Card Styles */
 .long-card {
   display: flex !important;
-  margin: 20px !important; /* Increased margin to give more space around the card */
-  padding: 30px !important; /* Increased padding to make the card thicker */
+  margin: 10px !important; /* Increased margin to give more space around the card */
+  padding: 20px !important; /* Increased padding to make the card thicker */
   border: 1px solid #ddd !important; /* Card border */
   border-radius: 10px !important; /* Rounded corners */
-  overflow: hidden !important; /* Ensure child elements don't overflow */
   background-color: white !important; /* Card background color */
 }
 
 .card-img {
   width: 40% !important; /* Image width */
-  object-fit: cover !important; /* Ensure the image covers the area */
+  object-fit: contain !important; /* Ensure the image covers the area */
 }
 
 .long-card-content {
@@ -224,7 +199,6 @@ ion-fab-button ion-icon {
   font-size: 20px !important; /* Increased font size for better readability */
   margin: 0 !important;
   color: #333 !important;
-
 }
 
 .learn-more-button {
@@ -238,127 +212,16 @@ ion-fab-button ion-icon {
   background-color: #f9f9f9 !important; /* Slight background color change on hover */
 }
 
-
-
-/* Media Queries for Small Screens */
-@media (max-width: 600px) {
-  .main-container {
-    padding-bottom: 50px !important;
-  }
-
-  .card-calendar-container {
-    flex-direction: column !important;
-  }
-
-  .left-card {
-    margin-right: 0 !important;
-    margin-bottom: 20px !important;
-  }
-
-  .card-container-partner {
-    padding: 10px !important;
-  }
-
-  .square-card {
-    width: 60% !important; /* Set width to accommodate 3 cards per row */
-    padding: 10px !important;
-    margin-bottom: 5px !important; /* Add bottom margin */
-
-  }
-
-  .category-selector {
-    flex-direction: column !important;
-    padding: 5px 0 !important;
-  }
-
-  .selector-buttons {
-    flex-direction: row !important;
-  }
-
-  .category-button {
-    flex-direction: column !important;
-    margin:2px 0 !important;
-    padding: 5px !important; /* Make buttons smaller */
-  }
-
-  .category-button img {
-    width: 50px !important;
-    height: 40px !important;
-  }
-
-  .category-button span {
-    display: none !important; /* Hide text */
-  }
-
-  .card-text p,
-  .footer-info p {
-    font-size: 12px !important;
-  }
-
-  .footer-img {
-    width: 40px !important;
-    height: 40px !important;
-  }
-
-  .menu-selector li {
-    margin: 0 10px !important;
-  }
-
-  .menu-selector a {
-    font-size: 14px !important;
-  }
-
-  .search-icon {
-    font-size: 16px !important;
-  }
-
-  .calendar-container {
-    ion-card-content {
-      padding: 10px !important;
-    }
-    ion-title {
-      font-size: 16px !important; /* Smaller font size for title */
-    }
-    ion-datetime {
-      --min-width: 50% !important; /* Make the datetime picker full width */
-      --max-width: 50% !important; /* Ensure it doesn't exceed the container */
-      --min-height: 100px !important; /* Reduce the height of the datetime picker */
-    }
-  }
-  .menu-container {
-    display: none !important;
-  }
-  .calendar-container {
-    padding: 5px !important; /* Reduce padding for small screens */
-  }
-
-  .calendar-container ion-title {
-    font-size: 1.2rem !important; /* Smaller font size for title */
-  }
-
-  .calendar-container ion-datetime {
-    --min-width: 100% !important; /* Ensure full width for datetime picker */
-    --max-width: 50% !important; /* Ensure it doesn't exceed the container */
-    --min-height: 50px !important; /* Further reduce height for small screens */
-  }
-  .long-card {
-    padding: 10px !important;
-    margin-bottom: 10px !important;
-    .long-card-text p {
-      font-size: 14px !important;
-    }
-
-    .footer-img {
-      width: 40px !important;
-      height: 40px !important;
-    }
-
-    .long-footer-info p {
-      font-size: 12px !important;
-    }
-  }
+/* Fab Button Styles */
+ion-fab-button {
+  --background: purple !important;
 }
-/* Floating Donation Card */
+
+ion-fab-button ion-icon {
+  font-size: 24px !important;
+}
+
+/* Donation Card Styles */
 .donation-card {
   position: fixed !important;
   right: 20px !important;
@@ -396,4 +259,31 @@ ion-fab-button ion-icon {
   width: 100% !important;
 }
 
+/* Donation Button Styles */
+.donation-button {
+  position: fixed !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  background-color: rgb(50, 185, 9) !important;
+  color: white !important;
+  padding: 10px 15px !important;
+  border-radius: 0 10px 10px 0 !important;
+  z-index: 1000 !important;
+  cursor: pointer !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  opacity: 1 !important;
+  transition: opacity 0.3s !important;
+}
 
+.donation-button.show {
+  opacity: 0 !important;
+}
+
+/* Footer Styles */
+.footer-img {
+  width: 100% !important; /* Ensures image fits within footer */
+}

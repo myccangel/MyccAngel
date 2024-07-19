@@ -4,19 +4,18 @@
   padding-bottom: 1%;
   flex-direction: row;
 }
-/* Styles for the edit button */
 .edit-button {
   position: absolute;
-  top: 10px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
+  top: 10px;
+  right: 10px;
   color: #000000;
 }
 .menu-button {
   color: #ffffff;
 }
 .header .avatar {
-  width: 200px; /* Adjust size if needed */
-  height: 100px; /* Adjust size if needed */
+  width: 200px;
+  height: 100px;
   margin-top: 2em;
   margin-left: 1em;
   margin-bottom: -0.3em;
@@ -30,18 +29,17 @@
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
-  width: 100%; /* Make sure the text takes full width */
+  width: 100%;
   margin-left: 15em;
-  padding-right: 0; /* Reset padding */
+  padding-right: 0;
 }
 .header .name-info {
   font-size: 32px;
   font-weight: 600;
   color: #ffffff;
-  width: 100%; /* Make sure the text takes full width */
+  width: 100%;
   margin-left: 7.5em;
-  padding-right: 0; /* Reset padding */
-
+  padding-right: 0;
 }
 
 /* Responsiveness */
@@ -52,33 +50,34 @@
     justify-content: center;
   }
   .header .avatar {
-    width: 150px; /* Adjust the size of the avatar for smaller screens */
-    height: 150px; /* Adjust the size of the avatar for smaller screens */
-    margin-top: 1em; /* Adjust margin for smaller screens */
-    margin-left: 0; /* Reset margin */
-    margin-bottom: 0; /* Reset margin */
+    width: 150px;
+    height: 150px;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-bottom: 0;
     display: flex;
-    justify-content: center; /* Center the avatar */
+    justify-content: center;
   }
   .header .avatar img {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px; /* Adjust the size of the avatar for smaller screens */
-    height: 150px; /* Adjust the size of the avatar for smaller screens */
+    width: 150px;
+    height: 150px;
   }
   .header .name-info {
-    margin-left: 0; /* Reset margin */
-    margin-top: 0.5em; /* Adjust margin for smaller screens */
-    font-size: 24px; /* Adjust font size for smaller screens */
-    text-align: center; /* Center align the text */
+    margin-left: 0;
+    margin-top: 0.5em;
+    font-size: 24px;
+    text-align: center;
   }
   .header .stats {
-    margin-left: 0; /* Reset margin */
-    margin-top: 0.5em; /* Adjust margin for smaller screens */
-    text-align: center; /* Center align the text */
+    margin-left: 0;
+    margin-top: 0.5em;
+    text-align: center;
   }
 }
+
 
 /* Global Styles */
 ion-content {
@@ -106,8 +105,8 @@ ion-chip {
   flex-direction: column;
   background-color: #ffffff;
   padding: 30px;
-  justify-content: space-between; /* Equal space between the cards */
-  align-items: stretch; /* Force both cards to have the same height */
+  justify-content: space-between;
+  align-items: stretch;
   width: 100%;
   height: 100%;
 }
@@ -126,7 +125,7 @@ ion-chip {
   color: white;
   padding: 5px 10px;
   border-radius: 8px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Increasing shadow intensity */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   display: inline-block;
   margin: 0;
   width: fit-content;
@@ -136,102 +135,113 @@ ion-chip {
   color: white;
   padding: 5px 10px;
   border-radius: 8px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Increasing shadow intensity */
-  width: fit-content;
-  margin: 0 auto; /* Center horizontally */
-  display: block; /* Ensure block-level for centering */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  margin: 0 auto;
 }
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: #fff;
-  width: 100%;
-}
-.media-item {
-  position: relative;
-  text-align: center;
-  width: fit-content;
-
-
-}
-.media-name {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #B95CF4;
-  color: white;
-  padding: 5px 5px;
-  border-radius: 0 0 8px 8px;
-  box-sizing: border-box;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Increasing shadow intensity */
-}
-
-@media only screen and (max-width: 600px) {
-  .card-body {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center align cards */
-  }
-}
-
 .donation-section {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  text-align: center;
+  background-color: #E9D3FF;
+  padding: 30px 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-  h2 {
-    margin-bottom: 10px;
-  }
+}
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #B95CF4;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+.tab.active {
+  background-color: #B95CF4;
+  color: #fff;
+}
+.steps-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.step {
+  padding: 10px 20px;
+  border: 1px solid #B95CF4;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.step.active {
+  background-color: #B95CF4;
+  color: #fff;
+}
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 
-  p {
-    margin-bottom: 20px;
-  }
 }
 
+.card-left {
+  flex-grow: 1; /* Allow card-left to grow */
+  border: 5px solid #B95CF4;
+  border-radius: 15px;
+  margin-right: 20px; /* Space between the cards */
+}
+.card-right {
+  width: 48%; /* Fixed width */
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #B95CF4;
+  border-radius: 15px;
+}
+
+.text-card{
+  align-content: center;
+
+}
+.card-body {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.card-body h3 {
+  margin-top: 0;
+}
 .form-group {
   margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-
-  input, textarea {
-    width: 80%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-
-  input[type="number"], input[type="text"], input[type="email"] {
-    height: 40px;
-  }
-
-  textarea {
-    resize: vertical;
-    height: 80px;
-  }
 }
-
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
 .donate-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #6c63ff;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  width: 80%;
-  margin: 20px 0;
 }
-
 .donate-button:hover {
-  background-color: #0056b3;
+  background-color: #574b90;
+}
+.step-content {
+  display: none;
+}
+.step-content.active {
+  display: block;
 }

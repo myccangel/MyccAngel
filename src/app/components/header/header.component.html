@@ -4,19 +4,19 @@
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
 
-
   <ion-img src="../../../assets/images/logo.png" class="header-logo"></ion-img>
   <ion-title class="ion-text-center desktop-title" id="dynamic-title">
     Early Diagnosis
   </ion-title>
   <ion-buttons slot="end" class="responsive-buttons">
-    <ion-button class="signIn-button" routerLink="/login" (click)="login()" shape="round">Sign Up</ion-button>
-    <ion-button class="login-button" routerLink="/login" (click)="login()" shape="round">Login</ion-button>
-  </ion-buttons>
-  <ion-buttons class="donation-button">
+    <div class="buttons-container">
+      <ion-button class="signIn-button" routerLink="/login" (click)="login()">Sign Up</ion-button>
+      <ion-button class="login-button" routerLink="/login" (click)="login()">Sign In</ion-button>
+    </div>
     <ion-button class="round-button-donation" routerLink="/donation" (click)="donation()">Donate</ion-button>
   </ion-buttons>
 </ion-toolbar>
+
 <div class="menu-container">
   <nav class="menu-selector">
     <ul>

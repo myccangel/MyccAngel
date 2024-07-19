@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ResourcesPageRoutingModule } from './resources-routing.module';
 
 import { ResourcesPage } from './resources.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ResourcesPageRoutingModule
+    ResourcesPageRoutingModule,
+    SharedModule
   ],
   declarations: [ResourcesPage]
 })

@@ -2,47 +2,94 @@
   <div class="header">
     <app-header></app-header>
     <!-- Header content -->
-    <div class="avatar">
-      <img src="https://media.licdn.com/dms/image/D4E03AQEPuEFpai8f4Q/profile-displayphoto-shrink_400_400/0/1677082915350?e=2147483647&v=beta&t=I4ucGuL4uMhjv4BDwp3jDPmLFxOXJeDLh8wEEdgPWG4" alt="">
-    </div>
-    <div class="name-info">Derek Prates</div>
-    <div class="stats">Posts: 3 Groups: 10 Friends: 45</div>
+  </div>
+  <div class="cover">
+    <app-cover-picture [imageUrl]="'../../../assets/images/ai-help.jpg'" [altText]="'ai-help-cover'"></app-cover-picture>
   </div>
 
+  <!-- Donation Section -->
+  <div class="donation-section">
+    <div class="card-container">
+      <div class="card-left">
+        <div class="card-body">
+          <div class="tabs-container">
+            <div class="tab" [class.active]="activeTab === 'monthly'" (click)="showTab('monthly')">Give Monthly</div>
+            <div class="tab" [class.active]="activeTab === 'once'" (click)="showTab('once')">Once</div>
+          </div>
+          <div class="steps-container">
+            <div class="step" [class.active]="activeStep === 'step1-content'" (click)="showStep('step1-content')">1. Donation</div>
+            <div class="step" [class.active]="activeStep === 'step2-content'" (click)="showStep('step2-content')">2. About You</div>
+            <div class="step" [class.active]="activeStep === 'step3-content'" (click)="showStep('step3-content')">3. Payment</div>
+            <div class="step" [class.active]="activeStep === 'step4-content'" (click)="showStep('step4-content')">4. Done</div>
+          </div>
 
-<!-- Donation Section -->
- <div class="card">
-    <!-- First card -->
-    <div class="card-body">
-<div class="donation-section">
-  <h2>Support IBD team</h2>
-  <p>Your support helps IDB team to continue their work. Every donation, big or small, makes a difference.</p>
-  <form action="/submit-donation" method="post">
-    <div class="form-group">
-      <label for="donation-amount">Donation Amount:</label>
-      <input type="number" id="donation-amount" name="amount" placeholder="$" required>
-    </div>
-    <div class="form-group">
-      <label for="donor-name">Your Name:</label>
-      <input type="text" id="donor-name" name="name" placeholder="Derek Prates" required>
-    </div>
-    <div class="form-group">
-      <label for="donor-email">Your Email:</label>
-      <input type="email" id="donor-email" name="email" placeholder="derek@example.com" required>
-    </div>
-    <div class="form-group">
-      <label for="donation-message">Message:</label>
-      <textarea id="donation-message" name="message" placeholder="Add a message (optional)"></textarea>
-    </div>
-    <button type="submit" class="donate-button">Donate</button>
-  </form>
-</div>
-</div>
-</div>
+          <div id="step2-content" class="step-content" [class.active]="activeStep === 'step2-content'">
+            <p>Provide your personal information for the donation.</p>
+            <form id="about-you-form">
+              <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </form>
+          </div>
+          <div id="step3-content" class="step-content" [class.active]="activeStep === 'step3-content'">
+            <p>Enter your payment details to complete the donation.</p>
+            <form id="payment-form">
+              <div class="form-group">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" required>
+              </div>
+              <div class="form-group">
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+              </div>
+              <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+              </div>
+            </form>
+          </div>
 
-<footer>
-  <app-footer></app-footer>
-</footer>
-
-
+          <form action="/submit-donation" method="post" id="donation-form">
+            <div class="form-group">
+              <label for="country">Type in your country:</label>
+              <select id="country" name="country" required>
+                <option value="Ireland">Ireland</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <!-- Add more countries as needed -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="donation-amount">How much would you donate?</label>
+              <input type="number" id="donation-amount" name="amount" placeholder="€50.00" required>
+            </div>
+            <button type="submit" class="donate-button">Continue</button>
+          </form>
+        </div>
+      </div>
+      <div class="card-right">
+        <div class="card-body">
+          <div class="text-card">
+          <h3>Why Donate?</h3>
+          <p>Your donation helps us to provide essential services and support to those in need. Every contribution, no matter the size, makes a significant impact.</p>
+          <h3>How Your Donation is Used</h3>
+          <ul>
+            <li>Reason 1</li>
+            <li>Offering educational programs</li>
+            <li>Supporting healthcare initiatives</li>
+          </ul>
+          <p>Thank you for your generosity and support!</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </ion-content>
