@@ -122,8 +122,12 @@ To get a local copy up and running, follow these steps:
     ```bash
     $ nest g resource place/name
     ```   
-10. **Install class validator/transformer**:
+11. **Install class validator/transformer**:
     ```bash
     $ npm i class-validator
     $ npm i class-transformer
-    ```   
+    ``` 
+12. **Install class validator/transformer**:
+    ```bash
+    $ npm test
+    ```         

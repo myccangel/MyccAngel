@@ -19,6 +19,8 @@ import { hide, show } from 'src/store/loading/loading.actions';
 export class RegisterPage implements OnInit, OnDestroy {
   registerForm!: RegisterPageForm;
   registerStateSubscription: Subscription | undefined;
+  currentStep: number = 1;
+  years: number[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,6 +41,8 @@ export class RegisterPage implements OnInit, OnDestroy {
         name: formData.name,
         repeatPassword: formData.repeatPassword
       });
+      this.generateYearsList(); // Generate the list of years when component initializes
+
     }
 
     this.watchRegisterState();
@@ -47,6 +51,18 @@ export class RegisterPage implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.registerStateSubscription) {
       this.registerStateSubscription.unsubscribe();
+    }
+  }
+
+  nextStep() {
+    if (this.currentStep < 8) {
+      this.currentStep++;
+    }
+  }
+
+  prevStep() {
+    if (this.currentStep > 1) {
+      this.currentStep--;
     }
   }
 
@@ -94,6 +110,14 @@ export class RegisterPage implements OnInit, OnDestroy {
       this.store.dispatch(show());
     } else {
       this.store.dispatch(hide());
+    }
+  }
+
+  generateYearsList() {
+    const startYear = 1900; // or any other year you want to start from
+    const currentYear = new Date().getFullYear();
+    for (let year = currentYear; year >=startYear ; year--) {
+      this.years.push(year);
     }
   }
 }

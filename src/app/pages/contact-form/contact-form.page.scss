@@ -23,7 +23,6 @@ ion-chip {
 
 .contact-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin: 40px;
   padding: 40px;
@@ -31,9 +30,7 @@ ion-chip {
   border-radius: 15px;
   background-color: #f8f1fc;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
   color: #303940;
-  font-size: 30px;
 }
 
 .card-body {
@@ -43,44 +40,49 @@ ion-chip {
 .contact-info {
   flex: 1;
   margin-right: 20px;
-  font-size: 1.2em; /* Increase font size */
+  text-align: center; /* Center align text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
 }
 
 .contact-info h2 {
   margin-bottom: 20px;
   color: #B95CF4;
-  font-size: 50px; /* Increase font size */
+  font-size: 2em; /* Adjust font size */
   font-weight: bolder;
 }
 
 .contact-info p {
   margin-bottom: 20px;
   line-height: 1.6;
-  text-align: justify;
-  font-size: 28px; /* Increase font size */
+}
+
+.contact-form-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px; /* Increase padding for larger card */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form {
-  flex: 1;
-  font-size: 1.2em; /* Increase font size */
+  width: 100%;
+  max-width: 400px;
 }
 
 .contact-form form {
   margin: 0;
 }
 
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .form-group {
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  width: 48%;
-  font-size: 24px; /* Increase font size */
 }
 
 label {
@@ -92,7 +94,7 @@ label {
 input,
 textarea {
   width: 100%;
-  padding: 12px; /* Increase padding */
+  padding: 10px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -101,23 +103,24 @@ textarea {
 input[type="number"],
 input[type="text"],
 input[type="email"] {
-  height: 45px; /* Increase height */
+  height: 35px;
 }
 
 textarea {
   resize: vertical;
-  height: 100px; /* Increase height */
-  width: 100%; /* Ensure it matches the form width */
+  height: 100px;
 }
 
 button[type="submit"] {
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 16px;
   background-color: #B95CF4;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 40%;
+
 }
 
 button[type="submit"]:hover {
@@ -128,7 +131,6 @@ button[type="submit"]:hover {
   .contact-container {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
   .contact-info {
@@ -136,16 +138,11 @@ button[type="submit"]:hover {
     margin-bottom: 20px;
   }
 
-  .contact-form {
+  .contact-form-card {
     width: 100%;
   }
 
-  .form-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .form-group {
+  .contact-form {
     width: 100%;
   }
 }

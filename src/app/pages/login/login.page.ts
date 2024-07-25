@@ -78,14 +78,15 @@ export class LoginPage implements OnInit, OnDestroy {
   private async onError(loginState: LoginState) {
     if (loginState.error) {
       const toaster = await this.toastController.create({
-        position: "bottom",
-        message: loginState.error.message,
-        color: "danger",
+        position: 'bottom',
+        message: loginState.error.message, // Ensure this line correctly accesses the error message
+        color: 'danger',
         duration: 2000
       });
       toaster.present();
     }
   }
+
 
   private async onIsRecoveredPassword(loginState: LoginState) {
     if (loginState.isRecoveredPassword) {
