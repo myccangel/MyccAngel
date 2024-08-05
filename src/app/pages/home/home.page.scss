@@ -37,7 +37,7 @@ ion-title {
 /* Card Title Styles */
 .custom-card-title-center {
   text-align: center !important; /* Center align */
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bold;
   padding-bottom: 20px;
   padding-top: -30px;
@@ -172,13 +172,13 @@ ion-title {
 /* Long Card Styles */
 .long-card {
   display: flex !important;
-  margin: 10px !important; /* Increased margin to give more space around the card */
-  padding: 20px !important; /* Increased padding to make the card thicker */
+  margin: 20px 10px !important; /* Increased margin to give more space around the card */
+  padding: 30px !important; /* Increased padding to make the card thicker */
   border: 1px solid #ddd !important; /* Card border */
   border-radius: 10px !important; /* Rounded corners */
   background-color: white !important; /* Card background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Card shadow */
 }
-
 
 .card-img {
   width: 40% !important; /* Image width */
@@ -198,14 +198,14 @@ ion-title {
 }
 
 .long-card-text p {
-  font-size: 20px !important; /* Increased font size for better readability */
+  font-size: 32px !important; /* Increased font size for better readability */
   margin: 0 !important;
   color: #333 !important;
 }
 
 .learn-more-button {
   align-self: flex-end !important; /* Align button to the right */
-  margin-top: 10px !important; /* Add some margin on top */
+  margin-top: 20px !important; /* Add some margin on top */
 }
 
 .long-card:hover {
@@ -281,11 +281,22 @@ ion-fab-button ion-icon {
   transition: opacity 0.3s !important;
 }
 
-.donation-button.show {
-  opacity: 0 !important;
+.donation-button:hover {
+  opacity: 0.7 !important; /* Fade effect on hover */
 }
 
-/* Footer Styles */
-.footer-img {
-  width: 100% !important; /* Ensures image fits within footer */
+/* Animation */
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 1 !important;
+  }
+
+  50% {
+    opacity: 0.5 !important;
+  }
+}
+
+.donation-button.animate {
+  animation: fadeInOut 1.5s infinite !important;
 }

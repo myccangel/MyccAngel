@@ -1,3 +1,4 @@
+
 <ion-content fullscreen="true">
   <ion-header>
     <app-header></app-header>
@@ -15,59 +16,66 @@
 
           <!-- Progress Bar -->
           <div class="progress-bar-container">
-            <ion-progress-bar [value]="currentStep / 8"></ion-progress-bar>
-            <div class="progress-bar-text">{{currentStep}} / 8</div>
+            <ion-progress-bar [value]="currentStep / 11"></ion-progress-bar>
+            <div class="progress-bar-text">{{currentStep}} / 11</div>
           </div>
 
           <form [formGroup]="registerForm.getForm()">
             <div class="card-contact">
+
+              <!-- Step 1: Upload Medical Report -->
               <ion-card *ngIf="currentStep === 1">
-                <ion-card-header>
-                  <ion-card-title>Contact</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-input label="First name" labelPlacement="floating" placeholder="Enter your first name"
-                      type="text" formControlName="name"></ion-input>
-                    <app-error-message message="Name is mandatory" [field]="registerForm.getForm().get('name')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Last name" labelPlacement="floating" placeholder="Enter your Last name"
-                      type="text"></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Contact number" labelPlacement="floating" placeholder="Enter your contact number"
-                      type="number"></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Email" labelPlacement="floating" placeholder="Enter your email" type="email"
-                      formControlName="email"></ion-input>
-                    <app-error-message message="Email is invalid" [field]="registerForm.getForm().get('email')!"
-                      error="email"></app-error-message>
-                    <app-error-message message="Email is mandatory" [field]="registerForm.getForm().get('email')!"
-                      error="required"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Password" labelPlacement="floating" placeholder="Enter your password"
-                      type="password" formControlName="password"></ion-input>
-                    <app-error-message message="Password is mandatory" [field]="registerForm.getForm().get('password')!"
-                      error="required"></app-error-message>
-                    <app-error-message message="Password must be at least 7 characters long"
-                      [field]="registerForm.getForm().get('password')!" error="minlength"></app-error-message>
-                  </ion-item>
-                  <ion-item>
-                    <ion-input label="Repeat password" labelPlacement="floating" placeholder="Confirm your password"
-                      type="password" formControlName="repeatPassword"></ion-input>
-                    <app-error-message message="Confirm password is mandatory"
-                      [field]="registerForm.getForm().get('repeatPassword')!" error="required"></app-error-message>
-                    <app-error-message message="Passwords must be identical"
-                      [field]="registerForm.getForm().get('repeatPassword')!" error="areEqual"></app-error-message>
-                  </ion-item>
-                </ion-card-content>
+
+              <div class="medical-report-container">
+                <h3 class="title">Medical Report</h3>
+                <p class="description">Registration will only be completed with the submission of a medical report.</p>
+                <input type="file" id="medicalReport" (change)="onFileSelected($event)" class="file-input">
+                <label for="medicalReport" class="file-label">Choose File</label>
+                <span class="file-chosen" *ngIf="selectedFile">{{ selectedFile.name }}</span>
+              </div>
               </ion-card>
 
-              <ion-card *ngIf="currentStep === 2">
+
+
+                           <!-- Step 2: Contact Information -->
+                           <ion-card *ngIf="currentStep === 2">
+                            <ion-card-header>
+                              <ion-card-title>Contact</ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                              <ion-item>
+                                <ion-input label="First name" labelPlacement="floating" placeholder="Enter your first name" type="text" formControlName="firstName"></ion-input>
+                                <app-error-message message="Name is mandatory" [field]="registerForm.getForm().get('firstName')!" error="required"></app-error-message>
+                              </ion-item>
+                              <ion-item>
+                                <ion-input label="Last name" labelPlacement="floating" placeholder="Enter your Last name" type="text" formControlName="lastName"></ion-input>
+                              </ion-item>
+                              <ion-item>
+                                <ion-input label="Contact number" labelPlacement="floating" placeholder="Enter your contact number" type="number" formControlName="contactNumber"></ion-input>
+                              </ion-item>
+                              <ion-item>
+                                <ion-input label="Email" labelPlacement="floating" placeholder="Enter your email" type="email" formControlName="email"></ion-input>
+                                <app-error-message message="Email is invalid" [field]="registerForm.getForm().get('email')!" error="email"></app-error-message>
+                                <app-error-message message="Email is mandatory" [field]="registerForm.getForm().get('email')!" error="required"></app-error-message>
+                              </ion-item>
+                              <ion-item>
+                                <ion-input label="Password" labelPlacement="floating" placeholder="Enter your password" type="password" formControlName="password"></ion-input>
+                                <app-error-message message="Password is mandatory" [field]="registerForm.getForm().get('password')!" error="required"></app-error-message>
+                                <app-error-message message="Password must be at least 7 characters long" [field]="registerForm.getForm().get('password')!" error="minlength"></app-error-message>
+                              </ion-item>
+                              <ion-item>
+                                <ion-input label="Repeat password" labelPlacement="floating" placeholder="Confirm your password" type="password" formControlName="repeatPassword"></ion-input>
+                                <app-error-message message="Confirm password is mandatory" [field]="registerForm.getForm().get('repeatPassword')!" error="required"></app-error-message>
+                                <app-error-message message="Passwords must be identical" [field]="registerForm.getForm().get('repeatPassword')!" error="areEqual"></app-error-message>
+                              </ion-item>
+                              <ion-item>
+                                <ion-input label="Date of Birth" labelPlacement="floating" placeholder="Enter your date of birth" type="date" formControlName="birthDate"></ion-input>
+                                <app-error-message message="Date of birth is mandatory" [field]="registerForm.getForm().get('birthDate')!" error="required"></app-error-message>
+                              </ion-item>
+                            </ion-card-content>
+                          </ion-card>
+                          
+              <ion-card *ngIf="currentStep === 3">
                 <ion-card-header>
                   <ion-card-title>Address Information</ion-card-title>
                 </ion-card-header>
@@ -80,35 +88,35 @@
                       error="required"></app-error-message>
                   </ion-item>
                   <ion-item>
-                    <ion-input label="number" labelPlacement="floating" placeholder="Enter your address number"
+                    <ion-input label="Number" labelPlacement="floating" placeholder="Enter your address number"
                       type="tel" formControlName="number"></ion-input>
                     <app-error-message message="Number is mandatory"
                       [field]="registerForm.getForm().get('address')?.get('number')!"
                       error="required"></app-error-message>
                   </ion-item>
                   <ion-item>
-                    <ion-input label="complement" labelPlacement="floating" placeholder="Complement" type="text"
+                    <ion-input label="Complement" labelPlacement="floating" placeholder="Complement" type="text"
                       formControlName="complement"></ion-input>
                     <app-error-message message="Complement is mandatory"
                       [field]="registerForm.getForm().get('address')?.get('complement')!"
                       error="required"></app-error-message>
                   </ion-item>
                   <ion-item>
-                    <ion-input label="city" labelPlacement="floating" placeholder="City" type="text"
+                    <ion-input label="City" labelPlacement="floating" placeholder="City" type="text"
                       formControlName="city"></ion-input>
                     <app-error-message message="City is mandatory"
                       [field]="registerForm.getForm().get('address')?.get('city')!"
                       error="required"></app-error-message>
                   </ion-item>
                   <ion-item>
-                    <ion-input label="zipCode" labelPlacement="floating" placeholder="Zip Code" type="text"
+                    <ion-input label="Zip Code" labelPlacement="floating" placeholder="Zip Code" type="text"
                       formControlName="zipCode"></ion-input>
                     <app-error-message message="Zip Code is mandatory"
                       [field]="registerForm.getForm().get('address')?.get('zipCode')!"
                       error="required"></app-error-message>
                   </ion-item>
                   <ion-item>
-                    <ion-input label="country" labelPlacement="floating" placeholder="Country" type="text"
+                    <ion-input label="Country" labelPlacement="floating" placeholder="Country" type="text"
                       formControlName="country"></ion-input>
                     <app-error-message message="Country is mandatory"
                       [field]="registerForm.getForm().get('address')?.get('country')!"
@@ -117,7 +125,7 @@
                 </ion-card-content>
               </ion-card>
 
-              <ion-card *ngIf="currentStep === 3">
+              <ion-card *ngIf="currentStep === 4">
                 <ion-card-header>
                   <ion-card-title>We want to know a bit about you so that we can show you the best people to connect
                     with.</ion-card-title>
@@ -125,21 +133,42 @@
                 <ion-card-content>
                   <ion-item>
                     <ion-label class="box-selector">When were you first diagnosed?</ion-label>
-                    <ion-select formControlName="diagnosedYear" interface="popover">
+                    <ion-select formControlName="diagnosedYear" >
                       <ion-select-option *ngFor="let year of years" [value]="year">{{ year }}</ion-select-option>
                     </ion-select>
                   </ion-item>
+
+                </ion-card-content>
+              </ion-card>
+
+              <ion-card *ngIf="currentStep === 5">
+                <ion-card-header>
+                  <ion-card-title>We want to know a bit about you so that we can show you the best people to connect
+                    with.</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+
                   <ion-item>
                     <ion-label class="box-selector">What type of IBD have you been diagnosed with?</ion-label>
-                    <ion-select formControlName="typeIBDInformation" interface="popover">
+                    <ion-select formControlName="typeIBDInformation" >
                       <ion-select-option value="ulcerativeColitis">Ulcerative Colitis</ion-select-option>
                       <ion-select-option value="crohnsDisease">Crohn's Disease</ion-select-option>
                     </ion-select>
 
                   </ion-item>
-                  <ion-item>
+
+                </ion-card-content>
+              </ion-card>
+
+              <ion-card *ngIf="currentStep === 6">
+                <ion-card-header>
+                  <ion-card-title>We want to know a bit about you so that we can show you the best people to connect
+                    with.</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                   <ion-item>
                     <ion-label class="box-selector">How much does IBD impact your daily life?</ion-label>
-                    <ion-select formControlName="impactInformation" interface="popover">
+                    <ion-select formControlName="impactInformation">
                       <ion-select-option value="little">A little</ion-select-option>
                       <ion-select-option value="moderately">Moderately</ion-select-option>
                       <ion-select-option value="quiteABit">Quite a bit</ion-select-option>
@@ -151,7 +180,7 @@
                 </ion-card-content>
               </ion-card>
 
-              <ion-card *ngIf="currentStep === 4">
+              <ion-card *ngIf="currentStep === 7">
                 <ion-card-header>
                   <ion-card-title>Which aspect of your daily life has IBD impacted the most?</ion-card-title>
                 </ion-card-header>
@@ -160,45 +189,45 @@
                   <div class="checkbox-grid">
                     <div class="checkbox-column">
                       <ion-item>
-                        <ion-checkbox formControlName="sleep"></ion-checkbox>
+                        <ion-checkbox formControlName="impactSleep"></ion-checkbox>
                         <ion-label>Sleep</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="exerciseAndPhysicalActivity"></ion-checkbox>
+                        <ion-checkbox formControlName="impactPhysicalActivity"></ion-checkbox>
                         <ion-label>Physical Activity</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="sexualLife"></ion-checkbox>
+                        <ion-checkbox formControlName="impactSexualLife"></ion-checkbox>
                         <ion-label>Sexual Life</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="dietAndNutrition"></ion-checkbox>
+                        <ion-checkbox formControlName="impactDietAndNutrition"></ion-checkbox>
                         <ion-label>Diet and Nutrition</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="emotionalConnection"></ion-checkbox>
+                        <ion-checkbox formControlName="impactEmotionalConnection"></ion-checkbox>
                         <ion-label>Emotional Connection</ion-label>
                       </ion-item>
                     </div>
                     <div class="checkbox-column">
                       <ion-item>
-                        <ion-checkbox formControlName="workAndSchool"></ion-checkbox>
+                        <ion-checkbox formControlName="impactWorkAndSchool"></ion-checkbox>
                         <ion-label>Work and School</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="socialActivities"></ion-checkbox>
+                        <ion-checkbox formControlName="impactSocialActivities"></ion-checkbox>
                         <ion-label>Social Activities</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="physicalHealth"></ion-checkbox>
+                        <ion-checkbox formControlName="impactPhysicalHealth"></ion-checkbox>
                         <ion-label>Physical Health</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="mentalHealth"></ion-checkbox>
+                        <ion-checkbox formControlName="impactMentalHealth"></ion-checkbox>
                         <ion-label>Mental Health</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="personalRelationship"></ion-checkbox>
+                        <ion-checkbox formControlName="impactPersonalRelationship"></ion-checkbox>
                         <ion-label>Personal Relationship</ion-label>
                       </ion-item>
                     </div>
@@ -206,7 +235,7 @@
                 </ion-card-content>
               </ion-card>
 
-              <ion-card *ngIf="currentStep === 5">
+              <ion-card *ngIf="currentStep === 8">
                 <ion-card-header>
                   <ion-card-title>Are you currently in remission or flare-up</ion-card-title>
                 </ion-card-header>
@@ -215,24 +244,23 @@
                   <div class="checkbox-grid">
                     <div class="checkbox-column">
                       <ion-item>
-                        <ion-checkbox formControlName="sleep"></ion-checkbox>
+                        <ion-checkbox formControlName="remission"></ion-checkbox>
                         <ion-label>Remission</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="exerciseAndPhysicalActivity"></ion-checkbox>
+                        <ion-checkbox formControlName="awaitingClinicalEvidence"></ion-checkbox>
                         <ion-label>A waiting clinical Evidence</ion-label>
                       </ion-item>
 
                     </div>
                     <div class="checkbox-column">
                       <ion-item>
-                        <ion-checkbox formControlName="sleep"></ion-checkbox>
+                        <ion-checkbox formControlName="flareUpClinically"></ion-checkbox>
                         <ion-label>Flare-up(Clinically)</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="sleep"></ion-checkbox>
-                        <ion-label>Very Much Symptomatic
-                        </ion-label>
+                        <ion-checkbox formControlName="veryMuchSymptomatic"></ion-checkbox>
+                        <ion-label>Very Much Symptomatic</ion-label>
                       </ion-item>
 
                     </div>
@@ -240,8 +268,7 @@
                 </ion-card-content>
               </ion-card>
 
-
-              <ion-card *ngIf="currentStep === 6">
+              <ion-card *ngIf="currentStep === 9">
                 <ion-card-header>
                   <ion-card-title>When did you get the tests done? (If Awaiting Clinical Evidence)</ion-card-title>
                 </ion-card-header>
@@ -250,38 +277,37 @@
                   <div class="checkbox-grid">
                     <div class="checkbox-column">
                       <ion-item>
-                        <ion-checkbox formControlName="sleep"></ion-checkbox>
+                        <ion-checkbox formControlName="testBloodInStools"></ion-checkbox>
                         <ion-label>Blood in stools all the time</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="exerciseAndPhysicalActivity"></ion-checkbox>
+                        <ion-checkbox formControlName="testMucus"></ion-checkbox>
                         <ion-label>Mucus</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="exerciseAndPhysicalActivity"></ion-checkbox>
+                        <ion-checkbox formControlName="testSharpAbdominalPain"></ion-checkbox>
                         <ion-label>Sharp Abdominal Pain</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="exerciseAndPhysicalActivity"></ion-checkbox>
-
+                        <ion-checkbox formControlName="testFeverMoreOften"></ion-checkbox>
                         <ion-label>Fever More Often</ion-label>
                       </ion-item>
                     </div>
                     <div class="checkbox-column">
                       <ion-item>
-                        <ion-checkbox formControlName="sleep"></ion-checkbox>
+                        <ion-checkbox formControlName="testBloodInStoolsAgain"></ion-checkbox>
                         <ion-label>Blood in stools all the time</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="exerciseAndPhysicalActivity"></ion-checkbox>
+                        <ion-checkbox formControlName="testMucusAgain"></ion-checkbox>
                         <ion-label>Mucus</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="exerciseAndPhysicalActivity"></ion-checkbox>
+                        <ion-checkbox formControlName="testSharpAbdominalPainAgain"></ion-checkbox>
                         <ion-label>Sharp Abdominal Pain</ion-label>
                       </ion-item>
                       <ion-item>
-                        <ion-checkbox formControlName="exerciseAndPhysicalActivity"></ion-checkbox>
+                        <ion-checkbox formControlName="testFeverMoreOftenAgain"></ion-checkbox>
                         <ion-label>Fever More Often</ion-label>
                       </ion-item>
                     </div>
@@ -289,7 +315,7 @@
                 </ion-card-content>
               </ion-card>
 
-              <ion-card *ngIf="currentStep === 7">
+              <ion-card *ngIf="currentStep === 10">
                 <ion-card-header>
                   <ion-card-title>Consent form</ion-card-title>
                 </ion-card-header>
@@ -304,75 +330,51 @@
                   </ion-item>
 
                   <ion-item>
-                    <ion-checkbox formControlName="acceptTerms"></ion-checkbox>
+                    <ion-checkbox formControlName="acceptDataAnalysis"></ion-checkbox>
                     <ion-label class="terms">
                       Can we analyze your data to understand or help others?
                       <span style="color: green; display: block; margin-top: 5px;">
                         We promise to completely anonymize your information and will never sell your data.
                       </span>
                     </ion-label>
-                    <app-error-message message="You must accept the terms and conditions" [field]="registerForm.getForm().get('acceptTerms')!" error="required"></app-error-message>
+                    <app-error-message message="You must accept the terms and conditions" [field]="registerForm.getForm().get('acceptDataAnalysis')!" error="required"></app-error-message>
                   </ion-item>
 
                   <ion-item>
-                    <ion-checkbox formControlName="acceptTerms"></ion-checkbox>
+                    <ion-checkbox formControlName="acceptTermsAndPrivacy"></ion-checkbox>
                     <ion-label class="terms">
                       I acknowledge that I have read and agree to the
                       <a href="/terms" style="color: blue;">Terms of Agreement</a> and consent to the
                       <a href="/privacy-policy" style="color: blue;">Privacy Policy</a> and Video Privacy Policy.
                     </ion-label>
-                    <app-error-message message="You must accept the terms and conditions" [field]="registerForm.getForm().get('acceptTerms')!" error="required"></app-error-message>
+                    <app-error-message message="You must accept the terms and conditions" [field]="registerForm.getForm().get('acceptTermsAndPrivacy')!" error="required"></app-error-message>
                   </ion-item>
                 </ion-card-content>
-                </ion-card>
-            <ion-card *ngIf="currentStep === 8">
-              <ion-card-header>
-                <ion-card-title>Thank You!</ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <ion-item>
-                <ion-text>
-                  <h1>Thank you for your interest in our platform.</h1>
-                  <p>This website is specifically designed to support individuals with Inflammatory Bowel Disease (IBD). Since you have indicated that you do not have IBD, you will not be able to create an account.</p>
-                  <p>If you are a caregiver or seeking more information about IBD, please visit our public resources section here. We appreciate your understanding.</p>
-                </ion-text>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-              <ion-card *ngIf="currentStep === 9">
+              </ion-card>
+
+
+              <ion-card *ngIf="currentStep === 11">
                 <ion-card-header>
                   <ion-card-title>Thank You!</ion-card-title>
                 </ion-card-header>
                 <ion-card-content>
-                  <div class="checkbox-grid">
-                    <div class="checkbox-column">
-                      <ion-item>
-                        <ion-label>A waiting Clinical Evidence</ion-label>
-                        <ion-checkbox formControlName="sleep"></ion-checkbox>
-                      </ion-item>
-                      <ion-item>
-                        <ion-label>Flare-up(Clinically)</ion-label>
-                      </ion-item>
-                    </div>
-                    <div class="checkbox-column">
-                      <ion-item>
-                        <ion-label>Very Much Symptomatic</ion-label>
-                      </ion-item>
-                      <ion-item>
-                        <ion-label>Remission</ion-label>
-                      </ion-item>
-                    </div>
-                  </div>
+                  <ion-item>
+                    <ion-text>
+                      <h1>Thank you for your interest in our platform.</h1>
+                      <p>This website is specifically designed to support individuals with Inflammatory Bowel Disease (IBD). Since you have indicated that you do not have IBD, you will not be able to create an account.</p>
+                      <p>If you are a caregiver or seeking more information about IBD, please visit our public resources section here. We appreciate your understanding.</p>
+                    </ion-text>
+                  </ion-item>
                 </ion-card-content>
               </ion-card>
+
             </div>
 
             <div class="navigation-buttons">
-              <ion-button (click)="prevStep()" [disabled]="currentStep === 1">Previous</ion-button>
-              <ion-button (click)="nextStep()" [disabled]="currentStep === 7">Next</ion-button>
-
+              <ion-button (click)="prevStep()" *ngIf="currentStep !== 1 && currentStep !== 11">Previous</ion-button>
+              <ion-button (click)="nextStep()" *ngIf="currentStep !== 11 && currentStep !== 10">Next</ion-button>
             </div>
-            <ion-button class="registerButton" *ngIf="currentStep === 7" (click)="register()" >Sign Up</ion-button>
+            <ion-button class="registerButton" *ngIf="currentStep === 10" (click)="register()">Sign Up</ion-button>
 
           </form>
 

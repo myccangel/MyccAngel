@@ -1,33 +1,38 @@
 <ion-footer>
-  <ion-toolbar color="light" style="padding: 0; min-height: 200px; display: flex; flex-direction: column;">
-    <ion-row class="ion-justify-content-center" style="padding: 10px 0; margin: 0;">
-      <ion-col size="auto" class="footer-nav">
+  <ion-toolbar color="light" style="padding: 20px; display: flex; flex-direction: column;">
+    <ion-row class="ion-align-items-center" style="margin: 0;">
+      <ion-col size="6" style="text-align: left;">
+        <div style="font-size: 32px; font-weight: bold; color: #B95CF4;">My CC Angel</div>
+      </ion-col>
+      <ion-col size="6" class="footer-nav" style="text-align: right;">
         <a href="#" class="footer-link">ABOUT IBD</a>
-        <a href="#" class="footer-link">CONSULT A DOCTOR</a>
-        <a href="#" class="footer-link">MY ACCOUNT</a>
-        <a href="#" class="footer-link">FAQS</a>
         <a href="#" class="footer-link">ABOUT US</a>
-        <a href="#" class="footer-link">BLOG</a>
-        <a href="#" class="footer-link">MEDIA</a>
+        <a href="#" class="footer-link">AI HELP</a>
+        <a href="#" class="footer-link">RESOURCES</a>
         <a href="#" class="footer-link">CONTACT US</a>
-        <a href="#" class="footer-link">JOIN OUR MAILING LIST</a>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center" style="padding: 20px 0; margin: 0;">
+      <ion-col size="auto" class="footer-socials">
+        <ion-button expand="full" fill="clear" class="footer-link" (click)="showAlert()">
+          <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button expand="full" fill="clear" class="footer-link" (click)="showAlert()">
+          <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+        </ion-button>
+        <ion-button expand="full" fill="clear" class="footer-link" (click)="showAlert()">
+          <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
+        </ion-button>
+        <ion-button expand="full" fill="clear" class="footer-link" (click)="showAlert()">
+          <ion-icon slot="icon-only" name="logo-linkedin"></ion-icon>
+        </ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row class="ion-justify-content-center" style="padding: 10px 0; margin: 0;">
-      <ion-col size="auto" class="footer-socials">
-        <ion-button expand="full" fill="clear" href="https://www.facebook.com/seu-facebook" class="footer-link">
-          <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
-        </ion-button>
-        <ion-button expand="full" fill="clear" href="https://twitter.com/seu-twitter" class="footer-link">
-          <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
-        </ion-button>
-        <ion-button expand="full" fill="clear" href="https://www.linkedin.com/in/seu-linkedin" class="footer-link">
-          <ion-icon slot="icon-only" name="logo-linkedin"></ion-icon>
-        </ion-button>
-        <ion-button expand="full" fill="clear" href="https://www.instagram.com/seu-instagram" class="footer-link">
-          <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
-        </ion-button>
+      <ion-col size="auto">
+        <div>&copy; 2024 MyCCAngel</div>
       </ion-col>
     </ion-row>
   </ion-toolbar>

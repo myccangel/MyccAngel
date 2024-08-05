@@ -7,13 +7,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class SwiperCardComponent implements OnInit, OnDestroy {
   images = [
-    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
-    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
-    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
-    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
-    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
-    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
-    'https://static.vecteezy.com/system/resources/previews/023/107/177/non_2x/world-inflammatory-bowel-disease-day-template-for-background-banner-card-poster-illustration-vector.jpg',
+    '../../../assets/images/home page 1-Grey bkg.png',
+    '../../../assets/images/Chat bot grey background.png',
+    '../../../assets/images/Navigator.gif'
   ];
 
   currentSlideIndex = 0;

@@ -35,6 +35,24 @@
         <div class="step" [class.active]="activeStep === 'step4-content'" (click)="showStep('step4-content')">4. Done</div>
       </div>
 
+      <div id="step1-content" class="step-content" [class.active]="activeStep === 'step1-content'">
+        <form id="donation-form">
+          <div class="form-group">
+            <label for="country">Select country:</label>
+            <select id="country" name="country" required>
+              <option value="Ireland">Ireland</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+              <!-- Add more countries as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="donation-amount">How much would you donate?</label>
+            <input type="number" id="donation-amount" name="amount" placeholder="€50.00" required>
+          </div>
+        </form>
+      </div>
+
       <div id="step2-content" class="step-content" [class.active]="activeStep === 'step2-content'">
         <p>Provide your personal information for the donation.</p>
         <form id="about-you-form">
@@ -48,9 +66,14 @@
           </div>
         </form>
       </div>
+
       <div id="step3-content" class="step-content" [class.active]="activeStep === 'step3-content'">
         <p>Enter your payment details to complete the donation.</p>
         <form id="payment-form">
+          <div class="form-group">
+            <label for="card-name">Card Name:</label>
+            <input type="text" id="card-name" name="card-name" required>
+          </div>
           <div class="form-group">
             <label for="card-number">Card Number:</label>
             <input type="text" id="card-number" name="card-number" required>
@@ -66,22 +89,11 @@
         </form>
       </div>
 
-      <form action="/submit-donation" method="post" id="donation-form">
-        <div class="form-group">
-          <label for="country">Type in your country:</label>
-          <select id="country" name="country" required>
-            <option value="Ireland">Ireland</option>
-            <option value="USA">USA</option>
-            <option value="UK">UK</option>
-            <!-- Add more countries as needed -->
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="donation-amount">How much would you donate?</label>
-          <input type="number" id="donation-amount" name="amount" placeholder="€50.00" required>
-        </div>
-        <button type="submit" class="donate-button">Continue</button>
-      </form>
+      <div id="step4-content" class="step-content" [class.active]="activeStep === 'step4-content'">
+        <p>Thank you for your donation! You will receive a confirmation email shortly.</p>
+      </div>
+
+      <button type="submit" class="donate-button">Continue</button>
     </div>
   </div>
   <footer>

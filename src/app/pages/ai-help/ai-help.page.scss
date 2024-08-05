@@ -1,96 +1,9 @@
-.header {
-  align-items: center;
-  padding-bottom: 1%;
-  flex-direction: row;
-}
-
-.edit-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #000000;
-}
-
-.menu-button {
-  color: #ffffff;
-}
-
-.header .avatar {
-  width: 200px;
-  height: 100px;
-  margin-top: 2em;
-  margin-left: 1em;
-  margin-bottom: -0.3em;
-}
-
-.header .avatar img {
-  border-radius: 50%;
-  border: 5px solid #B95CF4;
-  background-color: #fff;
-}
-
-.header .stats {
-  font-size: 16px;
-  font-weight: 400;
-  color: #ffffff;
-  width: 100%;
-  margin-left: 15em;
-  padding-right: 0;
-}
-
-.header .name-info {
-  font-size: 32px;
-  font-weight: 600;
-  color: #ffffff;
-  width: 100%;
-  margin-left: 7.5em;
-  padding-right: 0;
-}
-
-@media only screen and (max-width: 600px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header .avatar {
-    width: 150px;
-    height: 150px;
-    margin-top: 1em;
-    margin-left: 0;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .header .avatar img {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 150px;
-  }
-
-  .header .name-info {
-    margin-left: 0;
-    margin-top: 0.5em;
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .header .stats {
-    margin-left: 0;
-    margin-top: 0.5em;
-    text-align: center;
-  }
-}
-
+/* General Styles */
 ion-content {
-  --background: url("https://t3.ftcdn.net/jpg/00/94/25/52/360_F_94255289_bLOLo8dVkESH4wP4QNVUg4hWBlcBEEOg.jpg") no-repeat top center/cover fixed, #fff;
-  height: auto;
-  min-height: 100vh;
+  --background: #fff;
+  height: 100%;
   width: 100%;
+  overflow-y: auto;
 }
 
 ion-toolbar {
@@ -98,150 +11,127 @@ ion-toolbar {
 }
 
 ion-chip {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 200;
   color: #303940;
   background-color: transparent;
 }
 
-.card {
-  margin-top: -20px;
-  width: 100%;
+.cover {
+  padding-top: 20px;
 }
 
-.card-body {
+.title-welcome {
+  text-align: center;
+}
+
+.chat-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.chat-sidebar {
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.chat-sidebar img {
+  width: auto;
+  border-radius: 20px;
+  height: auto;
+  padding-top: 50%;}
+
+.chat-main {
+  width: 70%;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  padding: 50px 70px;
   justify-content: space-between;
-  align-items: stretch;
-  width: 100%;
 }
 
-.media-card {
-  margin-top: 10px;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.chat-header {
   text-align: center;
-  width: 100%;
+  margin-bottom: 10px;
 }
 
-.custom-card-title {
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f8f1fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.user-message {
+  justify-content: flex-end;
+}
+
+.bot-message {
+  justify-content: flex-start;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.user-avatar {
+  background-color: #ccc;
+}
+
+.bot-avatar {
   background-color: #B95CF4;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  margin: 0;
-  width: fit-content;
 }
 
-.custom-card-title-center {
-  background-color: #B95CF4;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  width: fit-content;
-  margin: 0 auto;
-  display: block;
-}
-
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: #fff;
-  width: 100%;
-}
-
-.media-item {
-  position: relative;
-  text-align: center;
-  width: fit-content;
-}
-
-.media-name {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #B95CF4;
-  color: white;
-  padding: 5px 5px;
-  border-radius: 0 0 8px 8px;
-  box-sizing: border-box;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-@media only screen and (max-width: 600px) {
-  .card-body {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.ai-help-section {
-  margin: 30px;
-  padding: 30px;
-  border: 5px solid #B95CF4;
-  border-radius: 15px;
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: #303940;
-  text-align: justify;
-  font-size: 30px;
 }
 
-.ai-help-section h2 {
-  margin-bottom: 20px;
-  color: #B95CF4;
-  font-size: 38px;
-  font-weight: bolder;
+.chat-input {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.ai-help-section p {
-  margin-bottom: 20px;
-  line-height: 1.6;
-  text-align: justify;
+.chat-input ion-input {
+  flex: 1;
+  margin-right: 10px;
 }
 
-.ai-help-section ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: left;
-}
-
-.ai-help-section ul li {
-  margin-bottom: 10px;
-  text-align: justify;
-}
-
-.ai-help-section ul li:before {
-  content: "- ";
-  color: #B95CF4;
-}
-
-.donation-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.chat-input ion-button {
   background-color: #B95CF4;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-  z-index: 1000 !important;
+  color: #fff;
 }
+.full-card{
+  align-items: center;
+}
+@media only screen and (max-width: 800px) {
+  .chat-wrap {
+    flex-direction: column;
+  }
 
-.donation-button.visible {
-  opacity: 1;
+  .chat-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+
+  }
+
+  .chat-main {
+    width: 100%;
+  }
 }

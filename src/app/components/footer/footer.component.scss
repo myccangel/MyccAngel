@@ -6,16 +6,16 @@ ion-footer {
 .footer-nav {
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: center !important;
+  justify-content: flex-end !important;
   position: relative;
+  font-size: small;
 }
 
 .footer-link {
   font-size: 14px !important;
   color: #B95CF4 !important;
-  margin: 5px 15px !important;
+  margin: 0 10px !important;
   text-decoration: none !important;
-
 }
 
 .footer-link:hover {
@@ -25,7 +25,7 @@ ion-footer {
 .footer-socials {
   display: flex !important;
   justify-content: center !important;
-  gap: 10px !important; /* Space between social buttons */
+  gap: 20px !important; /* Space between social buttons */
 }
 
 .footer-socials ion-button {

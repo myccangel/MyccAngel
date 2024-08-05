@@ -96,6 +96,10 @@ export const routes: Routes = [
   {
     path: 'resources',
     loadChildren: () => import('./pages/resources/resources.module').then( m => m.ResourcesPageModule)
+  },
+  {
+    path: 'toilet-navigator',
+    loadChildren: () => import('./pages/toilet-navigator/toilet-navigator.module').then( m => m.ToiletNavigatorPageModule)
   }
 
 

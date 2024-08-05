@@ -81,7 +81,7 @@ ion-chip {
   border-radius: 15px;
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  height: 500px;
+  max-height: fit-content;
 }
 
 .tabs-container, .steps-container {

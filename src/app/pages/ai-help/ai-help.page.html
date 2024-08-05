@@ -1,28 +1,48 @@
-<!-- ai-help.component.html -->
-<ion-content fullscreen="true" slot="fixed">
-  <div class="header">
-    <app-header ></app-header>
-  </div>
-  <app-cover-picture [imageUrl]="'../../../assets/images/ai-help.jpg'" [altText]="'ai-help-cover'"></app-cover-picture>
+<ion-content fullscreen="true">
+  <ion-header>
+    <app-header></app-header>
+  </ion-header>
 
 
-  <div class="card">
-    <div class="card-body">
-      <div class="ai-help-section">
-        <h2>AI Help</h2>
-        <p>Our AI Help section is dedicated to assisting you with various tasks using advanced AI technologies. Whether you need help with data analysis, content generation, or technical support, our AI tools are here to make your life easier.</p>
-        <p>Explore the capabilities of our AI systems and see how they can benefit you in different areas. We are constantly updating and improving our AI to provide the best support possible.</p>
-        <p>If you have any questions or need personalized assistance, don't hesitate to reach out to our support team.</p>
-      </div>
-    </div>
-  </div>
+  <app-cover-picture [imageUrl]="'../../../assets/images/ai-help.jpg'" [altText]="'about-us-cover'"></app-cover-picture>
+
+
+  <ion-grid class="flex-center">
+    <ion-row>
+      <ion-col>
+        <ion-card class="full-card">
+          <ion-card-content>
+            <div class="chat-wrap">
+              <div class="chat-sidebar">
+                <img src="../../../assets/images/Chat bot grey background.png" alt="Chat Bot">
+              </div>
+              <div class="chat-main">
+                <div class="chat-header">
+                  <ion-card-title>Welcome to Crohn's and Colitis Angel Chat</ion-card-title>
+                </div>
+                <div class="chat-messages">
+                  <div class="chat-message user-message">
+                    <span class="chat-avatar user-avatar"></span>
+                    <span class="chat-bubble">I have been vomiting a lot lately.</span>
+                  </div>
+                  <div class="chat-message bot-message">
+                    <span class="chat-avatar bot-avatar"></span>
+                    <span class="chat-bubble">The cause of ......</span>
+                  </div>
+                </div>
+                <div class="chat-input">
+                  <ion-input type="text" placeholder="Message Anglo"></ion-input>
+                  <ion-button fill="clear">Send</ion-button>
+                </div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <footer>
     <app-footer></app-footer>
   </footer>
 </ion-content>
-
-<!-- Styles for AI Help Page -->
-<style>
-/* Include the same styles provided previously for the AI Help page */
-</style>

@@ -21,6 +21,7 @@ export class RegisterPage implements OnInit, OnDestroy {
   registerStateSubscription: Subscription | undefined;
   currentStep: number = 1;
   years: number[] = [];
+  selectedFile: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,10 +42,8 @@ export class RegisterPage implements OnInit, OnDestroy {
         name: formData.name,
         repeatPassword: formData.repeatPassword
       });
-      this.generateYearsList(); // Generate the list of years when component initializes
-
     }
-
+    this.generateYearsList(); // Generate the list of years when component initializes
     this.watchRegisterState();
   }
 
@@ -55,7 +54,7 @@ export class RegisterPage implements OnInit, OnDestroy {
   }
 
   nextStep() {
-    if (this.currentStep < 8) {
+    if (this.currentStep < 11) {
       this.currentStep++;
     }
   }
@@ -71,6 +70,12 @@ export class RegisterPage implements OnInit, OnDestroy {
     if (this.registerForm.getForm().valid) {
       const formValue = this.registerForm.getForm().value;
       this.store.dispatch(register({ userRegister: formValue }));
+      // Wait for the state to be updated before navigating to the last step
+      this.registerStateSubscription = this.store.select('register').subscribe(state => {
+        if (state.isRegistered) {
+          this.currentStep = 11; // Navigate to the last step
+        }
+      });
     }
   }
 
@@ -87,7 +92,7 @@ export class RegisterPage implements OnInit, OnDestroy {
   }
 
   private onRegister(state: RegisterState) {
-    if (state.isRegistered) {
+    if (state.isRegistered && this.currentStep === 11) {
       this.store.dispatch(login({
         email: this.registerForm.getForm().value.email,
         password: this.registerForm.getForm().value.password
@@ -113,11 +118,19 @@ export class RegisterPage implements OnInit, OnDestroy {
     }
   }
 
-  generateYearsList() {
-    const startYear = 1900; // or any other year you want to start from
-    const currentYear = new Date().getFullYear();
-    for (let year = currentYear; year >=startYear ; year--) {
-      this.years.push(year);
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+      this.registerForm.patchValue({
+        medicalReport: file
+      });
     }
+  }
+
+  private generateYearsList() {
+    const currentYear = new Date().getFullYear();
+    const startYear = currentYear - 100;
+    this.years = Array.from({ length: currentYear - startYear + 1 }, (_, i) => startYear + i);
   }
 }
